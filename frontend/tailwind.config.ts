@@ -7,11 +7,13 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   plugins: [],
-  colors: {
-    primary: '#FFCD00',
-    secondary: '#231F20',
-  },
   theme: {
+    colors: {
+      primary: '#FFCD00',
+      secondary: '#231F20',
+      white: '#FFFFFF',
+      black: '#000000',
+    },
     extend: {
       fontFamily: {
         integralcf: ['var(--font-integralcf)'],

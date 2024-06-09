@@ -1,0 +1,26 @@
+:root {
+  --swiper-pagination-color: #231f20;
+}
+
+.swiper {
+  width: 240px;
+  height: 340px;
+  margin-right: 5rem;
+  margin-left: 5rem;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  height: 300px;
+}
+
+.swiper-slide {
+  background-color: #231f20;
+}
+
+.swiper-pagination {
+  bottom: 0;
+}

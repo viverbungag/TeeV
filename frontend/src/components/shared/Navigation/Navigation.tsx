@@ -10,7 +10,7 @@ const index = () => {
     >
       <div className="flex justify-between items-center">
         <Image src="/logo.png" width={150} height={150} alt="logo" />
-        <ul className="flex gap-8 items-center mr-8 text-[0.9rem]">
+        <ul className="md:flex gap-8 items-center mr-8 text-[0.9rem] hidden">
           <li>PRODUCTS</li>
           <li>REQUEST QUOTE</li>
           <li>MEET OUR TEAM</li>

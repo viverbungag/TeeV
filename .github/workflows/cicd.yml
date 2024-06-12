@@ -1,0 +1,38 @@
+name: CICD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Change directory to backend
+        run: cd backend
+      - name: Build Project
+        run: ./gradlew assemble
+      - name: Login to docker hub
+        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+      - name: Build Docker Image
+        run: docker build -t viverbungag/teevision/springboot-backend .
+      - name: Publish image to docker hub
+        run: docker push viverbungag/teevision/springboot-backend
+
+  deploy:
+    needs: build
+    runs-on: [teevision-aws-ec2]
+    steps:
+      - name: Pull Image from docker hub
+        run: docker pull viverbungag/teevision/springboot-backend:latest
+      - name: Stop Docker Container
+        run: docker rm -f teevision-backend
+      - name: Run Docker Container
+        run: docker run -d -p 8080:8080 --name teevision-backend viverbungag/teevision/springboot-backend:latest

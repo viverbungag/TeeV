@@ -15,9 +15,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - name: Change directory to backend
-        run: cd backend
       - name: Build Project
+        working-directory: ./backend
         run: ./gradlew assemble
       - name: Login to docker hub
         run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}

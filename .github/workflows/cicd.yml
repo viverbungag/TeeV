@@ -17,7 +17,9 @@ jobs:
           java-version: '21'
       - name: Build Project
         working-directory: ./backend
-        run: ./gradlew assemble
+        run: |
+          chmod +x gradlew
+          ./gradlew assemble
       - name: Login to docker hub
         run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
       - name: Build Docker Image

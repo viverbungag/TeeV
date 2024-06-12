@@ -37,3 +37,4 @@ out/
 .vscode/
 
 compose.yaml
+application.properties

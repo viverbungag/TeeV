@@ -1,12 +1,18 @@
 :root {
-  --swiper-pagination-color: #231f20;
+  --swiper-pagination-color: #fcfcfc;
 }
 
 .swiper {
-  width: 240px;
-  height: 340px;
-  margin-right: 5rem;
-  margin-left: 5rem;
+  width: 500px;
+  height: 200px;
+  margin-right: 0;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .swiper-slide {
@@ -15,6 +21,7 @@
   justify-content: center;
   border-radius: 18px;
   height: 300px;
+  width: 150px;
 }
 
 .swiper-slide {
@@ -23,4 +30,35 @@
 
 .swiper-pagination {
   bottom: 0;
+}
+
+.carousel-container {
+  /* width: 20rem; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 640px) {
+  .swiper {
+    width: 340px;
+    height: 340px;
+    margin-right: 5rem;
+    margin-left: 5rem;
+  }
+
+  .swiper-slide {
+    height: 300px;
+    width: 200px;
+  }
+
+  .carousel-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  /* .carousel-container {
+    width: 100%;
+  } */
 }

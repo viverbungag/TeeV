@@ -1,3 +1,4 @@
+import daisyui from 'daisyui';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -6,11 +7,17 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  plugins: [],
+  plugins: [daisyui],
+  daisyui: {
+    darkTheme: 'light', // name of one of the included themes for dark mode
+    base: false, // applies background color and foreground color for root element by default
+    styled: true, // include daisyUI colors and design decisions for all components
+    utils: true, // adds responsive and modifier utility classes
+  },
   theme: {
     colors: {
-      primary: '#FFCD00',
-      secondary: '#231F20',
+      primaryT: '#FFCD00',
+      secondaryT: '#231F20',
       white: '#FFFFFF',
       black: '#000000',
     },

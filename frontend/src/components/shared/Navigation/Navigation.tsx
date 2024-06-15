@@ -6,7 +6,7 @@ import Button from '@/components/shared/Button';
 const index = () => {
   return (
     <nav
-      className={`${IntegralCF.className} text-white fixed w-screen bg-secondary h-fit z-10 p-4`}
+      className={`${IntegralCF.className} text-white fixed w-screen bg-secondaryT h-fit z-10 p-4`}
     >
       <div className="flex justify-between items-center">
         <Image src="/logo.png" width={150} height={150} alt="logo" />

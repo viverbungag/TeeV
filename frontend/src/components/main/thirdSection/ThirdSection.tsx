@@ -5,10 +5,10 @@ import Oswald from '@/utilities/fonts/oswald/oswald';
 
 const ThirdSection = () => {
   return (
-    <section className="p-8 sm:p-0 sm:py-20 bg-primary">
+    <section className="p-8 sm:p-0 sm:py-20 bg-primaryT">
       <div className="w-full flex flex-col gap-12">
         <h2
-          className={`${IntegralCF.className} text-secondary relative text-[3rem] leading-tight text-center`}
+          className={`${IntegralCF.className} text-secondaryT relative text-[3rem] leading-tight text-center`}
         >
           OUR SERVICES
         </h2>

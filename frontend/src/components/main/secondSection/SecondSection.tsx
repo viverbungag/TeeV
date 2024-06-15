@@ -12,12 +12,12 @@ const contents = [
 
 const SecondSection = () => {
   return (
-    <section className="sm:py-20 mt-[9rem] sm:mt-0">
+    <section className="sm:py-20 relative mt-[1rem] sm:mt-0">
       <div className="flex sm:flex-row flex-col items-center justify-center">
-        <CardCarousel contents={contents} />
+        {/* <CardCarousel contents={contents} /> */}
         <div className="sm:w-[30rem] p-4 sm:pt-0 flex gap-4 flex-col justify-center items-center sm:items-start">
           <h2
-            className={`${IntegralCF.className} text-secondary relative text-[2rem] sm:text-[2.7rem] text-center sm:text-left leading-tight`}
+            className={`${IntegralCF.className} text-secondaryT relative text-[2rem] sm:text-[2.7rem] text-center sm:text-left leading-tight`}
           >
             Logos, DESIGNS, AND MORE
           </h2>

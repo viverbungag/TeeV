@@ -8,7 +8,7 @@ import NavigationMenuItemToggle from '@/components/shared/Navigation/NavigationT
 import NavigationMenuToggle from '@/components/shared/Navigation/NavigationToggle/NavigationMenuToggle/NavigationMenuToggle';
 import './NavigationToggle.css';
 
-const sidebar = {
+const sidebarVariants = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 750px 40px)`,
     transition: {
@@ -27,16 +27,18 @@ const sidebar = {
   },
 };
 
-const variants = {
+const ulVariants = {
   open: {
+    display: 'block',
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
   },
   closed: {
+    display: 'none',
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
 };
 
-const backdrop = {
+const backdropVariants = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 750px 40px)`,
     transition: {
@@ -54,6 +56,17 @@ const backdrop = {
       damping: 40,
     },
     opacity: 0,
+  },
+};
+
+const navigationToggleVariants = {
+  open: {
+    width: '100vw',
+    height: '100vh',
+  },
+  closed: {
+    width: '150px',
+    height: '200px',
   },
 };
 
@@ -81,23 +94,27 @@ const NavigationToggle = () => {
   const { height } = useDimensions(containerRef);
 
   return (
-    <div className="navigation-toggle">
+    <motion.div
+      className="navigation-toggle"
+      variants={navigationToggleVariants}
+      animate={isOpen ? 'open' : 'closed'}
+    >
       <motion.nav
         initial={false}
         animate={isOpen ? 'open' : 'closed'}
         custom={height}
         ref={containerRef}
       >
-        <motion.div className="backdrop" variants={backdrop} />
-        <motion.div className="background" variants={sidebar} />
-        <motion.ul className="flex flex-col gap-4 p-12" variants={variants}>
+        <motion.div className="backdrop" variants={backdropVariants} />
+        <motion.div className="background" variants={sidebarVariants} />
+        <motion.ul className="flex flex-col gap-4 p-12" variants={ulVariants}>
           {navigationItems.map((item) => (
             <NavigationMenuItemToggle item={item} key={item.label} />
           ))}
         </motion.ul>
         <NavigationMenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
-    </div>
+    </motion.div>
   );
 };
 

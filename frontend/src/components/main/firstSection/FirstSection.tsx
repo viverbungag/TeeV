@@ -29,17 +29,18 @@ const FirstSection = () => {
                 <h1
                   className={`${IntegralCF.className} text-primaryT relative sm:text-[4rem] text-[2rem] xl:text-left text-center leading-tight`}
                 >
-                  DESIGN AND
+                  CUSTOM PRINTED
                   <span className="block sm:text-[2rem] text-[1rem]">
-                    PRINT AGENCY
+                    T-SHIRTS & APPAREL
                   </span>
                 </h1>
                 <h2
                   className={`${Coolvetica.className} text-white text-center xl:text-left sm:text-[1.2rem] xl:max-w-full max-w-[40rem]`}
                 >
-                  Transform your business into a brand. If you need customized
-                  apparel for your business, we’ll lay the foundations to make
-                  sure that you have a professional look and feel.
+                  Use custom t-shirts, apparel and merch to ensure that you stay
+                  ahead of the competition. Together, we’ll have you wearing
+                  garments that has accurate prints, high quality control and a
+                  solid professional feel.
                 </h2>
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <Button styleType="primary">SHOP FOR PRODUCTS</Button>
@@ -54,7 +55,7 @@ const FirstSection = () => {
                   <h3
                     className={`${IntegralCF.className} text-black text-center`}
                   >
-                    COMPANIES THAT WE’VE DONE APPARELS AND DESIGNS
+                    companies and influencers we’ve partnered with before
                   </h3>
                   <div className="xl:flex grid grid-cols-2 gap-2 items-center justify-center">
                     <Image

@@ -12,7 +12,7 @@ const ThirdSection = () => {
         >
           OUR SERVICES
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 sm:auto-rows-[1fr] sm:w-[60rem] sm:h-[30rem] self-center gap-4">
+        <div className="grid grid-cols-2 xl:grid-cols-4 sm:auto-rows-[1fr] xl:w-[60rem] xl:h-[30rem] self-center gap-4">
           <div className="row-span-1 sm:row-span-2 col-span-2 sm:col-span-2 flex relative items-center bg-white rounded-2xl sm:h-auto">
             <Image
               src="/main/secondSection/carouselPic1.png"
@@ -53,7 +53,20 @@ const ThirdSection = () => {
               EMBROIDERY
             </h3>
           </div>
-          <div className="row-span-1 col-span-2 relative flex justify-center bg-white rounded-2xl">
+          <div className="row-span-1 col-span-1 relative flex justify-center bg-white rounded-2xl">
+            <Image
+              src="/main/secondSection/carouselPic1.png"
+              width={300}
+              height={300}
+              alt="Service 4"
+            />
+            <h3
+              className={`${Oswald.className} text-md font-bold absolute bottom-2 left-3`}
+            >
+              CUSTOM MERCH
+            </h3>
+          </div>
+          <div className="row-span-1 col-span-1 relative flex justify-center bg-white rounded-2xl">
             <Image
               src="/main/secondSection/carouselPic1.png"
               width={300}

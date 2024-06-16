@@ -30,7 +30,9 @@ const NavigationMenuItemToggle = ({ item }: { item: any }) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <p className={`${IntegralCF.className} text-4xl`}>{item.label}</p>
+      <p className={`${IntegralCF.className} sm:text-4xl text-xl`}>
+        {item.label}
+      </p>
     </motion.li>
   );
 };

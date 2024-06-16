@@ -3,12 +3,17 @@ import localFont from 'next/font/local';
 const IntegralCF = localFont({
   src: [
     {
-      path: './Fontspring-DEMO-integralcf-regular.otf',
+      path: './Integral CF Regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './Fontspring-DEMO-integralcf-bold.otf',
+      path: './Integral CF Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './Integral CF Bold.otf',
       weight: '700',
       style: 'normal',
     },

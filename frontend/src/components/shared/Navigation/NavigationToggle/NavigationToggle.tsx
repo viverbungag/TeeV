@@ -107,7 +107,10 @@ const NavigationToggle = () => {
       >
         <motion.div className="backdrop" variants={backdropVariants} />
         <motion.div className="background" variants={sidebarVariants} />
-        <motion.ul className="flex flex-col gap-4 p-12" variants={ulVariants}>
+        <motion.ul
+          className="flex relative flex-col gap-4 p-12"
+          variants={ulVariants}
+        >
           {navigationItems.map((item) => (
             <NavigationMenuItemToggle item={item} key={item.label} />
           ))}

@@ -3,8 +3,8 @@
 }
 
 .swiper {
-  width: 500px;
-  height: 200px;
+  width: 340px;
+  height: 340px;
   margin-right: 0;
   margin-left: 0;
   display: flex;
@@ -37,12 +37,13 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  border-radius: 2rem;
 }
 
 @media screen and (min-width: 640px) {
   .swiper {
-    width: 340px;
-    height: 340px;
+    width: 500px;
+    height: 300px;
     margin-right: 5rem;
     margin-left: 5rem;
   }

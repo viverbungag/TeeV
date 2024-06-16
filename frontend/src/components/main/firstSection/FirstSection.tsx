@@ -14,19 +14,17 @@ const contents = [
 
 const FirstSection = () => {
   return (
-    <section className="sm:h-screen h-auto relative xl:pt-16 pt-[4.8rem]">
+    <section className="xl:h-screen h-auto relative xl:pt-16 pt-[4.8rem]">
       <div className="h-full">
         <ResponsiveImage
           srcSm="/main/firstSection/firstSectionSmBG.png"
           src2Xl="/main/firstSection/firstSectionBG.png"
           alt="Background Image"
-          width={700}
-          height={700}
           className="absolute w-screen sm:h-screen"
         />
         <div className="relative h-full xl:pb-16">
           <div className="flex flex-col items-center justify-center w-full xl:h-full">
-            <div className="grid xl:grid-cols-2 grid-cols-1 p-8 xl:w-[70rem] justify-center">
+            <div className="grid xl:grid-cols-2 grid-cols-1 p-8 xl:w-[80rem] justify-center">
               <div className="flex flex-col justify-center xl:items-start items-center gap-4 justify-self-center xl:pl-20 col-span-1">
                 <h1
                   className={`${IntegralCF.className} text-primaryT relative sm:text-[4rem] text-[2rem] xl:text-left text-center leading-tight`}
@@ -51,14 +49,14 @@ const FirstSection = () => {
               <div className="col-span-1 mt-8 xl:mt-0">
                 <CardCarousel contents={contents} />
               </div>
-              <div className="flex items-center justify-center xl:col-span-2 col-span-1 sm:mt-16 mt-36">
+              <div className="flex items-center justify-center xl:col-span-2 col-span-1 mt-16">
                 <div className="flex flex-col w-fit items-center justify-center gap-4 bg-[#F7F7F8] rounded-3xl py-4 px-8 sm:py-8 sm:px-20">
                   <h3
                     className={`${IntegralCF.className} text-black text-center`}
                   >
                     COMPANIES THAT WE’VE DONE APPARELS AND DESIGNS
                   </h3>
-                  <div className="sm:flex grid grid-cols-2 gap-2 items-center justify-center">
+                  <div className="xl:flex grid grid-cols-2 gap-2 items-center justify-center">
                     <Image
                       src="/main/firstSection/springboardLogo.png"
                       alt="Products Image"

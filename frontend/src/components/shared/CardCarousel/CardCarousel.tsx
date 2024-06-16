@@ -26,7 +26,7 @@ const CardCarousel: React.FC<PropTypes> = ({ contents }) => {
         slidesPerView={'auto'}
         coverflowEffect={{
           rotate: 0,
-          stretch: 0,
+          stretch: 35,
           depth: 500,
           modifier: 1,
           slideShadows: true,

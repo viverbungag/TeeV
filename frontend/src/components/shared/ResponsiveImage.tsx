@@ -11,8 +11,6 @@ type PropTypes = {
   srcXl?: string;
   src2Xl: string;
   alt: string;
-  width: number;
-  height: number;
   className: string;
 };
 
@@ -23,8 +21,6 @@ const ResponsiveImage: React.FC<PropTypes> = ({
   srcXl,
   src2Xl,
   alt,
-  width,
-  height,
   className,
 }) => {
   const { width: windowWidthSize } = useWindowSize();
@@ -43,9 +39,9 @@ const ResponsiveImage: React.FC<PropTypes> = ({
     <Image
       src={srcToUse}
       alt={alt}
-      width={width}
-      height={height}
       className={className}
+      fill
+      objectFit="cover"
     />
   );
 };

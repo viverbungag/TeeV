@@ -50,7 +50,7 @@ const FirstSection = () => {
                   <Button styleType="secondary">REQUEST A QUOTE</Button>
                 </div>
               </div>
-              <div className="col-span-1 mt-8">
+              <div className="col-span-1">
                 <CardCarousel contents={contents} />
               </div>
               <div className="flex items-center justify-center xl:col-span-2 col-span-1 mt-16">
@@ -58,7 +58,7 @@ const FirstSection = () => {
                   <h3
                     className={`${Coolvetica.className} text-[1.3rem] text-black text-center`}
                   >
-                    TRUSTED BY
+                    COMPANIES WE'VE PARTNERED BEFORE
                   </h3>
                   <Marquee>
                     <div className="flex sm:gap-12 gap-8 sm:pl-10 pl-6 items-center justify-center">

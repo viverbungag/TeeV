@@ -5,6 +5,7 @@ import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
 import Button from '@/components/shared/Button';
 import ResponsiveImage from '@/components/shared/ResponsiveImage';
 import CardCarousel from '@/components/shared/CardCarousel/CardCarousel';
+import Oswald from '@/utilities/fonts/oswald/oswald';
 
 const contents = [
   { imageSrc: '/main/secondSection/carouselPic1.png' },
@@ -31,7 +32,8 @@ const FirstSection = () => {
                 >
                   CUSTOM PRINTED
                   <span className="block sm:text-[2rem] text-[1rem]">
-                    T-SHIRTS & APPAREL
+                    T<span className={Coolvetica.className}>-</span>SHIRTS{' '}
+                    <span className={Coolvetica.className}>&</span> APPAREL
                   </span>
                 </h1>
                 <h2

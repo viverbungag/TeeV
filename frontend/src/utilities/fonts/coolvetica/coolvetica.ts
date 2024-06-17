@@ -3,19 +3,14 @@ import localFont from 'next/font/local';
 const Coolvetica = localFont({
   src: [
     {
-      path: './Oswald-Regular.ttf',
+      path: './Coolvetica Regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './Oswald-SemiBold.ttf',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: './Oswald-Bold.ttf',
-      weight: '700',
-      style: 'normal',
+      path: './Coolvetica Compressed.otf',
+      weight: '400',
+      style: 'italic',
     },
   ],
   variable: '--font-coolvetica',

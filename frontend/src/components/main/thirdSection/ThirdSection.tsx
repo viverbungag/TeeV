@@ -12,7 +12,7 @@ const ThirdSection = () => {
         >
           OUR SERVICES
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 sm:auto-rows-[1fr] md:w-[60rem] md:h-[30rem] self-center gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 sm:auto-rows-[1fr] w-fit md:w-[45rem] lg:w-[60rem] lg:h-[30rem] self-center gap-4">
           <div className="row-span-1 sm:row-span-2 col-span-2 sm:col-span-2 flex relative items-center bg-white rounded-2xl sm:h-auto">
             <Image
               src="/main/thirdSection/screenPrinting.png"

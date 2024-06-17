@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import Footer from '@/components/shared/Footer/Footer';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <ThirdSection />
       <FourthSection />
       <FifthSection />
+      <Footer />
     </main>
   );
 }

@@ -8,9 +8,9 @@ import CardCarousel from '@/components/shared/CardCarousel/CardCarousel';
 import Oswald from '@/utilities/fonts/oswald/oswald';
 
 const contents = [
-  { imageSrc: '/main/secondSection/carouselPic1.png' },
-  { imageSrc: '/main/secondSection/carouselPic2.png' },
-  { imageSrc: '/main/secondSection/carouselPic3.png' },
+  { imageSrc: '/main/firstSection/carouselPic1.png' },
+  { imageSrc: '/main/firstSection/carouselPic2.png' },
+  { imageSrc: '/main/firstSection/carouselPic3.png' },
 ];
 
 const FirstSection = () => {

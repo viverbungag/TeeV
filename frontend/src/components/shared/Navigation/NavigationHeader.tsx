@@ -27,7 +27,7 @@ const NavigationHeader = () => {
             </p>
           </div>
         </div>
-        <div className="absolute text-secondaryT right-24 sm:block hidden">
+        <div className="absolute text-secondaryT right-32 sm:block hidden">
           <Button styleType="primary">
             <div className="flex items-center gap-2">
               <Call width={20} height={20} />

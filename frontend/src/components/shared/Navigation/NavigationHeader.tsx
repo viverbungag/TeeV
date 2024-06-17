@@ -3,6 +3,7 @@ import Image from 'next/image';
 import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 import Star from '@/utilities/SVGs/Star';
 import Oswald from '@/utilities/fonts/oswald/oswald';
+import Button from '@/components/shared/Button';
 
 const NavigationHeader = () => {
   return (
@@ -24,6 +25,9 @@ const NavigationHeader = () => {
               4.9/5 Customer Satisfaction from 114 Google Reviews
             </p>
           </div>
+        </div>
+        <div className="absolute text-secondaryT right-24">
+          <Button styleType="primary">267-538-5331</Button>
         </div>
       </div>
     </div>

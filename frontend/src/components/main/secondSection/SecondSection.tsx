@@ -63,7 +63,7 @@ const products = [
 
 const SecondSection = () => {
   return (
-    <section className="py-4 relative bg-background1">
+    <section className="pt-4 pb-16 relative bg-background1">
       <div className="flex flex-col gap-8 items-center">
         <h2
           className={`${IntegralCF.className} text-secondaryT relative sm:text-[3rem] text-[2rem] leading-tight text-center`}
@@ -82,7 +82,7 @@ const SecondSection = () => {
                   alt={product.label}
                   className="rounded-2xl sm:w-[20rem] w-[15rem]"
                 />
-                <h3 className={`${Oswald.className} text-2xl`}>
+                <h3 className={`${Coolvetica.className} text-2xl`}>
                   {product.label}
                 </h3>
               </div>

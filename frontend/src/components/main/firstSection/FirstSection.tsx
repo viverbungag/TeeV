@@ -61,7 +61,7 @@ const FirstSection = () => {
                     TRUSTED BY
                   </h3>
                   <Marquee>
-                    <div className="xl:flex grid grid-cols-2 gap-12 pl-8 items-center justify-center">
+                    <div className="flex gap-12 pl-10 items-center justify-center">
                       <Image
                         src="/main/firstSection/springboardLogo.png"
                         alt="Products Image"

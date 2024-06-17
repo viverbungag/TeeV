@@ -13,7 +13,7 @@
 .first-section__carousel {
   .swiper {
     width: 340px;
-    height: 340px;
+    height: 300px;
     margin-right: 0;
     margin-left: 0;
     display: flex;

@@ -4,6 +4,7 @@ import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 import Star from '@/utilities/SVGs/Star';
 import Oswald from '@/utilities/fonts/oswald/oswald';
 import Button from '@/components/shared/Button';
+import Call from '@/utilities/SVGs/Call';
 
 const NavigationHeader = () => {
   return (
@@ -26,8 +27,13 @@ const NavigationHeader = () => {
             </p>
           </div>
         </div>
-        <div className="absolute text-secondaryT right-24">
-          <Button styleType="primary">267-538-5331</Button>
+        <div className="absolute text-secondaryT right-24 sm:block hidden">
+          <Button styleType="primary">
+            <div className="flex items-center gap-2">
+              <Call width={20} height={20} />
+              267-538-5331
+            </div>
+          </Button>
         </div>
       </div>
     </div>

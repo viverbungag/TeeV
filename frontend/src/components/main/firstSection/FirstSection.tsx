@@ -50,7 +50,7 @@ const FirstSection = () => {
                   <Button styleType="secondary">REQUEST A QUOTE</Button>
                 </div>
               </div>
-              <div className="col-span-1">
+              <div className="col-span-1 xl:mt-0 mt-8">
                 <CardCarousel contents={contents} />
               </div>
               <div className="flex items-center justify-center xl:col-span-2 col-span-1 mt-16">

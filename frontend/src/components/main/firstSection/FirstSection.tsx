@@ -54,14 +54,14 @@ const FirstSection = () => {
                 <CardCarousel contents={contents} />
               </div>
               <div className="flex items-center justify-center xl:col-span-2 col-span-1 mt-16">
-                <div className="flex flex-col w-[50rem] items-center justify-center gap-4 bg-[#F7F7F8] rounded-lg py-4 px-8">
+                <div className="flex flex-col sm:w-[50rem] w-[20rem] items-center justify-center gap-4 bg-[#F7F7F8] rounded-lg py-4 px-8">
                   <h3
                     className={`${Coolvetica.className} text-[1.3rem] text-black text-center`}
                   >
                     TRUSTED BY
                   </h3>
                   <Marquee>
-                    <div className="flex gap-12 pl-10 items-center justify-center">
+                    <div className="flex sm:gap-12 gap-8 sm:pl-10 pl-6 items-center justify-center">
                       <Image
                         src="/main/firstSection/springboardLogo.png"
                         alt="Products Image"

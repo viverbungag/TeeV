@@ -37,8 +37,8 @@ const CardCarousel: React.FC<PropTypes> = ({ contents }) => {
           <SwiperSlide key={index}>
             <Image
               src={content.imageSrc}
-              width={300}
-              height={300}
+              width={400}
+              height={400}
               alt="Carousel Picture"
               className="rounded-2xl"
             />

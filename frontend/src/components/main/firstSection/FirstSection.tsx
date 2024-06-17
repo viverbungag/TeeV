@@ -6,6 +6,7 @@ import Button from '@/components/shared/Button';
 import ResponsiveImage from '@/components/shared/ResponsiveImage';
 import CardCarousel from '@/components/shared/CardCarousel/CardCarousel';
 import Oswald from '@/utilities/fonts/oswald/oswald';
+import Marquee from 'react-fast-marquee';
 
 const contents = [
   { imageSrc: '/main/firstSection/carouselPic1.png' },
@@ -53,44 +54,46 @@ const FirstSection = () => {
                 <CardCarousel contents={contents} />
               </div>
               <div className="flex items-center justify-center xl:col-span-2 col-span-1 mt-16">
-                <div className="flex flex-col w-fit items-center justify-center gap-4 bg-[#F7F7F8] rounded-lg py-4 px-8 sm:py-6 sm:px-20">
+                <div className="flex flex-col w-[50rem] items-center justify-center gap-4 bg-[#F7F7F8] rounded-lg py-4 px-8">
                   <h3
-                    className={`${IntegralCF.className} text-black text-center`}
+                    className={`${Coolvetica.className} text-[1.3rem] text-black text-center`}
                   >
-                    Trusted By
+                    TRUSTED BY
                   </h3>
-                  <div className="xl:flex grid grid-cols-2 gap-8 items-center justify-center">
-                    <Image
-                      src="/main/firstSection/springboardLogo.png"
-                      alt="Products Image"
-                      width={150}
-                      height={150}
-                    />
-                    <Image
-                      src="/main/firstSection/chrisChoLogo.png"
-                      alt="Products Image"
-                      width={120}
-                      height={120}
-                    />
-                    <Image
-                      src="/main/firstSection/martinAminiLogo.png"
-                      alt="Products Image"
-                      width={120}
-                      height={120}
-                    />
-                    <Image
-                      src="/main/firstSection/midAtlanticLogo.png"
-                      alt="Products Image"
-                      width={120}
-                      height={120}
-                    />
-                    <Image
-                      src="/main/firstSection/providenceChurchLogo.png"
-                      alt="Products Image"
-                      width={120}
-                      height={120}
-                    />
-                  </div>
+                  <Marquee>
+                    <div className="xl:flex grid grid-cols-2 gap-12 pl-8 items-center justify-center">
+                      <Image
+                        src="/main/firstSection/springboardLogo.png"
+                        alt="Products Image"
+                        width={150}
+                        height={150}
+                      />
+                      <Image
+                        src="/main/firstSection/chrisChoLogo.png"
+                        alt="Products Image"
+                        width={120}
+                        height={120}
+                      />
+                      <Image
+                        src="/main/firstSection/martinAminiLogo.png"
+                        alt="Products Image"
+                        width={120}
+                        height={120}
+                      />
+                      <Image
+                        src="/main/firstSection/midAtlanticLogo.png"
+                        alt="Products Image"
+                        width={120}
+                        height={120}
+                      />
+                      <Image
+                        src="/main/firstSection/providenceChurchLogo.png"
+                        alt="Products Image"
+                        width={120}
+                        height={120}
+                      />
+                    </div>
+                  </Marquee>
                 </div>
               </div>
             </div>

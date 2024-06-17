@@ -20,6 +20,8 @@ const config: Config = {
       secondaryT: '#231F20',
       white: '#FFFFFF',
       black: '#000000',
+      background1: '#F6F7F9',
+      background2: '#242323',
     },
     extend: {
       fontFamily: {

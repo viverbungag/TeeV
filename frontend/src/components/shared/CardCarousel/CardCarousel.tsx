@@ -5,9 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Scrollbar } from 'swiper/modules';
 import Image from 'next/image';
 
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
 import './CardCarousel.css';
 
 type PropTypes = {
@@ -18,7 +15,7 @@ type PropTypes = {
 
 const CardCarousel: React.FC<PropTypes> = ({ contents }) => {
   return (
-    <div className="carousel-container">
+    <div className="first-section__carousel carousel-container">
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -26,7 +23,7 @@ const CardCarousel: React.FC<PropTypes> = ({ contents }) => {
         slidesPerView={'auto'}
         coverflowEffect={{
           rotate: 0,
-          stretch: 35,
+          stretch: 120,
           depth: 500,
           modifier: 1,
           slideShadows: true,
@@ -40,9 +37,10 @@ const CardCarousel: React.FC<PropTypes> = ({ contents }) => {
           <SwiperSlide key={index}>
             <Image
               src={content.imageSrc}
-              width={500}
-              height={500}
-              alt="Clothing Picture"
+              width={300}
+              height={300}
+              alt="Carousel Picture"
+              className="rounded-2xl"
             />
           </SwiperSlide>
         ))}

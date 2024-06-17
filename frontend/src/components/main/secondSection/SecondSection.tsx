@@ -45,25 +45,25 @@ const contents = [
 const products = [
   {
     label: 'T-Shirts',
-    imageSrc: '/main/secondSection/tshirts.png',
+    imageSrc: '/main/secondSection/tShirts.png',
   },
   {
     label: 'Hoodies',
-    imageSrc: '/main/secondSection/tshirts.png',
+    imageSrc: '/main/secondSection/hoodies.png',
   },
   {
     label: 'Sweatshirts',
-    imageSrc: '/main/secondSection/tshirts.png',
+    imageSrc: '/main/secondSection/sweatshirts.png',
   },
   {
     label: 'Bags',
-    imageSrc: '/main/secondSection/tshirts.png',
+    imageSrc: '/main/secondSection/bags.png',
   },
 ];
 
 const SecondSection = () => {
   return (
-    <section className="sm:py-20 relative mt-[1rem] sm:mt-0">
+    <section className="py-4 relative bg-background1">
       <div className="flex flex-col gap-8 items-center">
         <h2
           className={`${IntegralCF.className} text-secondaryT relative sm:text-[3rem] text-[2rem] leading-tight text-center`}

@@ -59,7 +59,7 @@ const Footer = () => {
             <Linkedin width={26} height={32} />
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="hidden sm:flex sm:flex-col md:flex-row gap-4">
           {footerContents.map((content) => (
             <div className="flex flex-col gap-4">
               <h3

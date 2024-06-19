@@ -63,7 +63,7 @@ const FirstSection = () => {
                 </div>
               </div>
               <div className="flex items-center justify-center xl:col-span-2 col-span-1 mt-8">
-                <div className="flex flex-col sm:w-[50rem] w-[20rem] items-center justify-center gap-4 bg-[#F7F7F8] rounded-lg py-4 px-8">
+                <div className="flex flex-col sm:max-w-[40rem] md:max-w-[50rem] max-w-[20rem] items-center justify-center gap-4 bg-[#F7F7F8] rounded-lg py-4 px-8">
                   <h3
                     className={`${Coolvetica.className} text-[1.3rem] text-black text-center`}
                   >

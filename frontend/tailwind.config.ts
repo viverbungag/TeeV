@@ -22,6 +22,8 @@ const config: Config = {
       black: '#000000',
       background1: '#F6F7F9',
       background2: '#242323',
+      background3: '#F1F0F5',
+      productPriceColor: '#969292',
     },
     extend: {
       fontFamily: {

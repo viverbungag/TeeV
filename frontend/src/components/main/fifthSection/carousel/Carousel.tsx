@@ -25,7 +25,7 @@ const Carousel: React.FC<PropTypes> = ({ contents }) => {
     <div className="reviews__carousel">
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         {contents.map((content, index) => (
-          <SwiperSlide>
+          <SwiperSlide key={content.title + index}>
             <div className="flex lg:flex-row flex-col gap-4">
               <div className="lg:w-[20rem] flex gap-4 relative">
                 <p

@@ -7,6 +7,7 @@ import { useDimensions } from '@/components/shared/Navigation/NavigationToggle/u
 import NavigationMenuItemToggle from '@/components/shared/Navigation/NavigationToggle/NavigationMenuItemToggle/NavigationMenuItemToggle';
 import NavigationMenuToggle from '@/components/shared/Navigation/NavigationToggle/NavigationMenuToggle/NavigationMenuToggle';
 import './NavigationToggle.css';
+import { link } from 'fs';
 
 const sidebarVariants = {
   open: (height = 1000) => ({
@@ -73,18 +74,23 @@ const navigationToggleVariants = {
 const navigationItems = [
   {
     label: 'PRODUCTS',
+    link: '/products',
   },
   {
     label: 'SERVICES',
+    link: '/',
   },
   {
     label: 'REQUEST A QUOTE',
+    link: '/',
   },
   {
     label: 'DESIGN STUDIO',
+    link: '/',
   },
   {
     label: 'ABOUT US',
+    link: '/',
   },
 ];
 

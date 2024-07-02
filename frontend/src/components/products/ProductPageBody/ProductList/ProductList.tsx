@@ -107,6 +107,7 @@ const ProductList = () => {
               width={250}
               height={250}
               alt="Product"
+              className="w-[10rem] sm:w-[15rem]"
             />
             <div className="text-center">
               <h2 className={`${Oswald.className} text-xs`}>{product.title}</h2>

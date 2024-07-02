@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
+import Link from 'next/link';
 
 const variants = {
   open: {
@@ -30,9 +31,11 @@ const NavigationMenuItemToggle = ({ item }: { item: any }) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <p className={`${IntegralCF.className} sm:text-4xl text-xl`}>
-        {item.label}
-      </p>
+      <Link href={item.link}>
+        <p className={`${IntegralCF.className} sm:text-4xl text-xl`}>
+          {item.label}
+        </p>
+      </Link>
     </motion.li>
   );
 };

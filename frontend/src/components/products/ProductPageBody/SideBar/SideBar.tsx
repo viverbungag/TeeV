@@ -1,5 +1,6 @@
 import SideBarCheckboxes from '@/components/products/ProductPageBody/SideBar/SideBarCheckboxes';
 import SideBarItems from '@/components/products/ProductPageBody/SideBar/SideBarItems';
+import SearchInput from '@/components/shared/SearchInput';
 import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
 import Oswald from '@/utilities/fonts/oswald/oswald';
 import React from 'react';
@@ -60,7 +61,7 @@ const collections = ['Popular Pics', 'Eco-Friendly Options', 'Made in USA'];
 const SideBar = () => {
   return (
     <div
-      className={`${Oswald.className} h-full relative flex flex-col w-[14rem] pt-24 pb-4 pr-4 gap-8 border-r-2 overflow-y-auto`}
+      className={`${Oswald.className} h-full relative hidden sm:flex flex-col w-[15rem] pt-24 pb-4 pr-4 gap-8 border-r-2 overflow-y-auto`}
     >
       <SideBarItems title="All Products">
         <div className="flex flex-col gap-2">

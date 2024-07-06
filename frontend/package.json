@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-amplify/adapter-nextjs": "^1.2.6",
     "@tanstack/react-query": "^5.44.0",
+    "aws-amplify": "^6.3.8",
     "axios": "^1.7.2",
     "daisyui": "^4.12.2",
     "framer-motion": "^11.2.10",
     "next": "14.2.3",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.4",

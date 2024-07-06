@@ -23,6 +23,8 @@ const config: Config = {
       background1: '#F6F7F9',
       background2: '#242323',
       background3: '#F1F0F5',
+      background4: '#F5F5F5',
+      background5: '#E7E8EC',
       productPriceColor: '#969292',
     },
     extend: {

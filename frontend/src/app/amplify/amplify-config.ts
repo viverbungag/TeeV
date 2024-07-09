@@ -1,6 +1,7 @@
 'use client';
 
 import { Amplify, type ResourcesConfig } from 'aws-amplify';
+import amplifyConfig from '../../amplifyconfiguration.json';
 
 export const authConfig: ResourcesConfig['Auth'] = {
   Cognito: {
@@ -13,9 +14,8 @@ export const authConfig: ResourcesConfig['Auth'] = {
 };
 
 Amplify.configure(
-  {
-    Auth: authConfig,
-  },
+  amplifyConfig,
+
   { ssr: true }
 );
 

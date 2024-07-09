@@ -1,6 +1,7 @@
 import Cabinet from '@/utilities/SVGs/Cabinet';
 import Clothes from '@/utilities/SVGs/Clothes';
 import Dashboard from '@/utilities/SVGs/Dashboard';
+import Link from 'next/link';
 import React from 'react';
 
 const AdminNavigation = () => {
@@ -11,10 +12,12 @@ const AdminNavigation = () => {
           <Dashboard width={20} height={20} />
           Dashboard
         </li>
-        <li className="flex gap-2 items-center">
-          <Clothes width={20} height={20} />
-          Products
-        </li>
+        <Link href="/admin/products">
+          <li className="flex gap-2 items-center">
+            <Clothes width={20} height={20} />
+            Products
+          </li>
+        </Link>
         <li className="flex gap-2 items-center">
           <Cabinet />
           Categories

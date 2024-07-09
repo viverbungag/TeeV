@@ -1,6 +1,6 @@
 'use client';
 
-import { handleSignOut } from '@/app/cognito/cognito-actions';
+import { handleSignOut } from '@/app/amplify/cognito-actions';
 import AdminNavigation from '@/components/admin/AdminNavigation/AdminNavigation';
 import AdminDashboard from '@/components/admin/dashboard/AdminDashboard/AdminDashboard';
 import React from 'react';

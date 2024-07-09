@@ -1,6 +1,7 @@
 import AdminToggle from '@/components/admin/shared/AdminToggle';
 import Add from '@/utilities/SVGs/Add';
 import Remove from '@/utilities/SVGs/Remove';
+import { InputValues } from '@/utilities/types/AdminFormTypes';
 import React from 'react';
 
 type PropTypes = {

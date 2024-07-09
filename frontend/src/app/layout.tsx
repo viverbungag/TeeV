@@ -4,7 +4,7 @@ import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
 import Oswald from '@/utilities/fonts/oswald/oswald';
 import Providers from '@/app/Providers';
-import ConfigureAmplifyClientSide from '@/app/cognito/amplify-cognito-config';
+import ConfigureAmplifyClientSide from '@/app/amplify/amplify-config';
 import { Slide, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

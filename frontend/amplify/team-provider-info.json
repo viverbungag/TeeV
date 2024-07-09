@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-teevision-dev-24c83-authRole",
+      "UnauthRoleArn": "arn:aws:iam::533267240259:role/amplify-teevision-dev-24c83-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::533267240259:role/amplify-teevision-dev-24c83-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-teevision-dev-24c83-deployment",
+      "UnauthRoleName": "amplify-teevision-dev-24c83-unauthRole",
+      "StackName": "amplify-teevision-dev-24c83",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:533267240259:stack/amplify-teevision-dev-24c83/e2e584b0-3ce3-11ef-abed-06bf352bbd9d",
+      "AmplifyAppId": "dlo661vd834y7"
+    },
+    "categories": {
+      "auth": {
+        "teevision3946cd02": {}
+      },
+      "storage": {
+        "teevisionAmplify": {}
+      }
+    }
+  }
+}

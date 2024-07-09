@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from 'next/server';
-import { authenticatedUser } from '@/app/cognito/amplify-server-utils';
+import { authenticatedUser } from '@/app/amplify/amplify-server-utils';
 
 export async function middleware(request: NextRequest) {
   const response = NextResponse.next();
@@ -7,13 +7,13 @@ export async function middleware(request: NextRequest) {
 
   const isOnLogin = request.nextUrl.pathname.startsWith('/admin/login');
 
-  if (!user && request.nextUrl.pathname.startsWith('/admin') && !isOnLogin) {
-    return NextResponse.redirect(new URL('/admin/login', request.nextUrl));
-  }
+  // if (!user && request.nextUrl.pathname.startsWith('/admin') && !isOnLogin) {
+  //   return NextResponse.redirect(new URL('/admin/login', request.nextUrl));
+  // }
 
-  if (user && isOnLogin) {
-    return NextResponse.redirect(new URL('/admin/dashboard', request.url));
-  }
+  // if (user && isOnLogin) {
+  //   return NextResponse.redirect(new URL('/admin/dashboard', request.url));
+  // }
 
   return response;
 }

@@ -1,5 +1,5 @@
 'use client';
-import AmplifyProvider from '@/app/cognito/amplify-cognito-config';
+import AmplifyProvider from '@/app/amplify/amplify-config';
 import React, { useState } from 'react';
 
 type ProvidersProps = {

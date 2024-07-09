@@ -1,6 +1,6 @@
 'use client';
 
-import { handleSignIn, handleSignOut } from '@/app/cognito/cognito-actions';
+import { handleSignIn, handleSignOut } from '@/app/amplify/cognito-actions';
 import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 import React, { useEffect } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';

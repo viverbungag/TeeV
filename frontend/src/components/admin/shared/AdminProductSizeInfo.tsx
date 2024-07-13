@@ -149,18 +149,26 @@ const AdminProductSizesInfo: React.FC<PropTypes> = ({
           </table>
         </div>
         <div className="flex flex-col gap-4">
-          <p className="font-bold">Clothing Size Prices</p>
+          <p className="font-bold">White Clothing Size Prices</p>
           <div className="flex flex-wrap gap-4">
             {inputValues.availableSizes
               .filter((s) => s.value)
               .map((size) => (
                 <div className="flex items-center gap-2" key={size.name}>
-                  <p
-                    className="text-sm
-                  "
-                  >
-                    {size.name}:
-                  </p>
+                  <p className="text-sm ">{size.name}:</p>
+                  <input type="number" className="input input-sm w-[5rem]" />
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-4">
+          <p className="font-bold">Colored Clothing Size Prices</p>
+          <div className="flex flex-wrap gap-4">
+            {inputValues.availableSizes
+              .filter((s) => s.value)
+              .map((size) => (
+                <div className="flex items-center gap-2" key={size.name}>
+                  <p className="text-sm">{size.name}:</p>
                   <input type="number" className="input input-sm w-[5rem]" />
                 </div>
               ))}

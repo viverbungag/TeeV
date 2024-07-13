@@ -26,6 +26,12 @@ const AdminNavigation = () => {
             Categories
           </li>
         </Link>
+        <Link href="/admin/price-settings">
+          <li className="flex gap-2 items-center">
+            <Cabinet />
+            Price Settings
+          </li>
+        </Link>
       </ul>
     </div>
   );

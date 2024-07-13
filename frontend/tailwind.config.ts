@@ -26,6 +26,10 @@ const config: Config = {
       background4: '#F5F5F5',
       background5: '#E7E8EC',
       productPriceColor: '#969292',
+      priceMarkupIndicationBackground: '#ADD8E6', //blue
+      clothingQuantityFromAndToIndicationBackground: '#CBC3E3', //purple
+      numberOfColorsIndicationBackground: '#FFD580', //orange
+      priceDataIndicationBackground: '#EDEDED', //gray
     },
     extend: {
       fontFamily: {

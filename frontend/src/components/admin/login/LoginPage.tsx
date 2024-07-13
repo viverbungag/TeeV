@@ -8,7 +8,6 @@ import { toast } from 'react-toastify';
 
 const FormButton = () => {
   const { pending } = useFormStatus();
-  console.log(pending);
 
   return (
     <button type="submit" className="btn btn-sm" disabled={pending}>

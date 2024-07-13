@@ -8,20 +8,24 @@ const AdminNavigation = () => {
   return (
     <div className="w-[15rem] bg-background4 h-full p-6">
       <ul className="flex flex-col gap-4 ">
-        <li className="flex gap-2 items-center">
-          <Dashboard width={20} height={20} />
-          Dashboard
-        </li>
+        <Link href="/admin/dashboard">
+          <li className="flex gap-2 items-center">
+            <Dashboard width={20} height={20} />
+            Dashboard
+          </li>
+        </Link>
         <Link href="/admin/products">
           <li className="flex gap-2 items-center">
             <Clothes width={20} height={20} />
             Products
           </li>
         </Link>
-        <li className="flex gap-2 items-center">
-          <Cabinet />
-          Categories
-        </li>
+        <Link href="/admin/categories">
+          <li className="flex gap-2 items-center">
+            <Cabinet />
+            Categories
+          </li>
+        </Link>
       </ul>
     </div>
   );

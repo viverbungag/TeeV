@@ -4,9 +4,7 @@ import {
 } from '@aws-amplify/adapter-nextjs';
 import { fetchAuthSession, getCurrentUser } from 'aws-amplify/auth/server';
 
-const amplifyConfig = JSON.parse(
-  String(process.env.NEXT_PUBLIC_AMPLIFY_CONFIG)
-);
+import { amplifyConfig } from '@/app/amplify/amplify-config';
 
 export const { runWithAmplifyServerContext } = createServerRunner({
   config: amplifyConfig,

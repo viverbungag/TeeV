@@ -1,9 +1,10 @@
-import Instagram from '@/utilities/SVGs/Instagram';
-import Linkedin from '@/utilities/SVGs/Linkedin';
+import React from 'react';
+import Image from 'next/image';
+
 import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
 import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
-import Image from 'next/image';
-import React from 'react';
+import Instagram from '@/utilities/SVGs/Instagram';
+import Linkedin from '@/utilities/SVGs/Linkedin';
 
 const footerContents = [
   {

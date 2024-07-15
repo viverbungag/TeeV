@@ -1,4 +1,5 @@
 import { type NextRequest, NextResponse } from 'next/server';
+
 import { authenticatedUser } from '@/app/amplify/amplify-server-utils';
 
 export async function middleware(request: NextRequest) {

@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useRef, useState } from 'react';
 
 import NewCategoryForm from '@/components/admin/category/new/NewCategoryForm/NewCategoryForm';
@@ -15,7 +16,7 @@ const AdminCategories = () => {
   }, [showModal]);
 
   return (
-    <div>
+    <div className="ml-60">
       <button
         onClick={() => {
           setShowModal(true);

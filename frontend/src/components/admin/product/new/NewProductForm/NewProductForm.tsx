@@ -131,7 +131,7 @@ const NewProductForm = () => {
   const [inputValues, setInputValues] = useState<InputValues>(initialValues);
 
   return (
-    <div className="flex items-center justify-center bg-background5 py-8">
+    <div className="flex bg-background5 p-16 ml-60">
       <form>
         <div className="flex flex-col w-[70rem] gap-8">
           <div className="flex gap-8">

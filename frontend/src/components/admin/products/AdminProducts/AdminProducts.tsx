@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 const AdminProducts = () => {
   return (
-    <div>
+    <div className="ml-60">
       <Link href="/admin/product/new">
-        <button className="btn btn-sm">Add a Product</button>
+        <button className="btn btn-md">Add a Product</button>
       </Link>
     </div>
   );

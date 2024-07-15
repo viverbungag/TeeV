@@ -24,12 +24,14 @@ const config: Config = {
       background2: '#242323',
       background3: '#F1F0F5',
       background4: '#F5F5F5',
-      background5: '#E7E8EC',
+      background5: '#E7E8E3',
       productPriceColor: '#969292',
       priceMarkupIndicationBackground: '#ADD8E6', //blue
       clothingQuantityFromAndToIndicationBackground: '#CBC3E3', //purple
       numberOfColorsIndicationBackground: '#FFD580', //orange
       priceDataIndicationBackground: '#EDEDED', //gray
+      activeNavigationItemBaclground: '#F5C341',
+      borderColor: '#A9A9A9',
     },
     extend: {
       fontFamily: {

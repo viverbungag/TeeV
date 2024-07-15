@@ -143,65 +143,68 @@ const AdminPriceSettings = () => {
   );
 
   return (
-    <div className="flex items-center justify-center bg-background5">
-      <div className="flex flex-col gap-12 bg-background5 p-12">
-        <div className="flex flex-col gap-8">
-          <h1 className="text-4xl font-bold">Front Print Location</h1>
-          <PriceTableWithLegends
-            frontPrintPrice={data.frontPrintPrice}
-            numberOfColors={numberOfColors}
-          />
-        </div>
-        <div className="flex flex-col gap-8">
-          <h1 className="text-4xl font-bold">Back Print Location</h1>
-          <PriceTableWithLegends
-            frontPrintPrice={data.frontPrintPrice}
-            numberOfColors={numberOfColors}
-          />
-        </div>
-        <div className="flex flex-col gap-8 border-b-2 border-[#A9A9A9] pb-8">
-          <h1 className="text-4xl font-bold">
-            Items per Package (Handling Charge)
-          </h1>
-          <div className="flex gap-8">
-            {Object.keys(ClothePackagingType).map((type) => (
-              <div key={type} className="flex items-center gap-4">
-                <label
-                  htmlFor={type}
-                  className="text-lg font-bold"
-                >{`${type}`}</label>
-                <input
-                  type="number"
-                  className="input input-md input-bordered"
-                  name={type}
-                  placeholder="Quantity per package"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="flex flex-col gap-8 border-b-2 border-[#A9A9A9] pb-8">
-          <h1 className="text-4xl font-bold">
-            Setup Charge per number of colors
-          </h1>
-          <div className="flex items-center gap-4">
-            <input
-              type="number"
-              className="input input-md input-bordered w-[14rem]"
-              name="setupCharge"
-              placeholder="Input the setup charge here"
+    <div className="flex flex-col gap-8 w-full h-full ml-60 p-12">
+      <h1 className="text-5xl font-bold leading-normal">Price Settings</h1>
+      <div className="flex bg-background5 w-full">
+        <div className="flex flex-col gap-12 bg-background5">
+          <div className="flex flex-col gap-8 bg-background4 p-8 rounded-lg">
+            <h1 className="text-2xl font-bold">Front Print Location</h1>
+            <PriceTableWithLegends
+              frontPrintPrice={data.frontPrintPrice}
+              numberOfColors={numberOfColors}
             />
           </div>
-        </div>
-        <div className="flex flex-col gap-8 border-b-2 border-[#A9A9A9] pb-8">
-          <h1 className="text-4xl font-bold">Admin Fees</h1>
-          <div className="flex items-center gap-4">
-            <input
-              type="number"
-              className="input input-md input-bordered w-[14rem]"
-              name="setupCharge"
-              placeholder="Input the admin fees here"
+          <div className="flex flex-col gap-8 bg-background4 p-8 rounded-lg">
+            <h1 className="text-2xl font-bold">Back Print Location</h1>
+            <PriceTableWithLegends
+              frontPrintPrice={data.frontPrintPrice}
+              numberOfColors={numberOfColors}
             />
+          </div>
+          <div className="flex flex-col gap-8 bg-background4 p-8 rounded-lg">
+            <h1 className="text-2xl font-bold">
+              Items per Package (Handling Charge)
+            </h1>
+            <div className="flex gap-8">
+              {Object.keys(ClothePackagingType).map((type) => (
+                <div key={type} className="flex items-center gap-4">
+                  <label
+                    htmlFor={type}
+                    className="text-lg font-bold"
+                  >{`${type}`}</label>
+                  <input
+                    type="number"
+                    className="input input-md input-bordered"
+                    name={type}
+                    placeholder="Quantity per package"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col gap-8 bg-background4 p-8 rounded-lg">
+            <h1 className="text-2xl font-bold">
+              Setup Charge per number of colors
+            </h1>
+            <div className="flex items-center gap-4">
+              <input
+                type="number"
+                className="input input-md input-bordered w-[14rem]"
+                name="setupCharge"
+                placeholder="Input the setup charge here"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col gap-8 bg-background4 p-8 rounded-lg">
+            <h1 className="text-2xl font-bold">Admin Fees</h1>
+            <div className="flex items-center gap-4">
+              <input
+                type="number"
+                className="input input-md input-bordered w-[14rem]"
+                name="setupCharge"
+                placeholder="Input the admin fees here"
+              />
+            </div>
           </div>
         </div>
       </div>

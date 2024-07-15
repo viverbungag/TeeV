@@ -1,6 +1,7 @@
 import React from 'react';
-import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 import Image from 'next/image';
+
+import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 import Oswald from '@/utilities/fonts/oswald/oswald';
 
 const ThirdSection = () => {

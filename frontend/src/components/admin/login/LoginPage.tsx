@@ -1,10 +1,11 @@
 'use client';
 
-import { handleSignIn, handleSignOut } from '@/app/amplify/cognito-actions';
-import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
-import { toast } from 'react-toastify';
+
+import { handleSignIn } from '@/app/amplify/cognito-actions';
+
+import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 
 const FormButton = () => {
   const { pending } = useFormStatus();
@@ -17,13 +18,12 @@ const FormButton = () => {
 };
 
 const LoginPage = () => {
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const [errorMessage, dispatch] = useFormState(handleSignIn, {
     status: '',
     message: '',
   });
-  const { pending } = useFormStatus();
 
-  const onLogin = () => {};
   return (
     <div className="w-full h-screen flex items-center justify-center">
       <form

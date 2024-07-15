@@ -1,13 +1,15 @@
 'use client';
 
-import React from 'react';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
+
 import { motion, useCycle } from 'framer-motion';
-import { useDimensions } from '@/components/shared/Navigation/NavigationToggle/use-dimensions';
+
+// eslint-disable-next-line no-restricted-imports
+import './NavigationToggle.css';
+
 import NavigationMenuItemToggle from '@/components/shared/Navigation/NavigationToggle/NavigationMenuItemToggle/NavigationMenuItemToggle';
 import NavigationMenuToggle from '@/components/shared/Navigation/NavigationToggle/NavigationMenuToggle/NavigationMenuToggle';
-import './NavigationToggle.css';
-import { link } from 'fs';
+import { useDimensions } from '@/components/shared/Navigation/NavigationToggle/use-dimensions';
 
 const sidebarVariants = {
   open: (height = 1000) => ({

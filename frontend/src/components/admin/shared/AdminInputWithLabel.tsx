@@ -1,5 +1,3 @@
-import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
-import Oswald from '@/utilities/fonts/oswald/oswald';
 import React from 'react';
 
 type PropTypes = {

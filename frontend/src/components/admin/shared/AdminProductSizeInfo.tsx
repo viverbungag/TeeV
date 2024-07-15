@@ -1,6 +1,10 @@
-import AdminToggle from '@/components/admin/shared/AdminToggle';
-import { ClothingSizes, InputValues } from '@/utilities/types/AdminFormTypes';
 import React from 'react';
+
+import AdminToggle from '@/components/admin/shared/AdminToggle';
+import type {
+  ClothingSizes,
+  InputValues,
+} from '@/utilities/types/AdminFormTypes';
 
 type PropTypes = {
   inputValues: InputValues;
@@ -78,7 +82,7 @@ const AdminProductSizesInfo: React.FC<PropTypes> = ({
           <p className="font-bold">Sizes</p>
           <div className="flex gap-4">
             {inputValues.availableSizes.map((size) => (
-              <div className="flex gap-2">
+              <div className="flex gap-2" key={size.name}>
                 <input
                   type="checkbox"
                   className="checkbox"
@@ -95,7 +99,7 @@ const AdminProductSizesInfo: React.FC<PropTypes> = ({
           <p className="font-bold">Clothe Size Parts</p>
           <div className="flex gap-4 flex-wrap">
             {inputValues.availableClotheSizeParts.map((sizePart) => (
-              <div className="flex gap-2">
+              <div className="flex gap-2" key={sizePart.name}>
                 <input
                   type="checkbox"
                   className="checkbox"
@@ -113,24 +117,24 @@ const AdminProductSizesInfo: React.FC<PropTypes> = ({
           <table className="table align-middle text-center">
             <thead>
               <tr>
-                <th></th>
+                <th />
                 {inputValues.availableClotheSizeParts
-                  .filter((s) => s.value)
+                  .filter((temp) => temp.value)
                   .map((sizePart) => (
-                    <th>{sizePart.name}</th>
+                    <th key={sizePart.name}>{sizePart.name}</th>
                   ))}
               </tr>
             </thead>
             <tbody>
               {inputValues.availableSizes
-                .filter((s) => s.value)
+                .filter((temp) => temp.value)
                 .map((size) => (
-                  <tr>
+                  <tr key={size.name}>
                     <td>{size.name}</td>
                     {inputValues.availableClotheSizeParts
-                      .filter((s) => s.value)
+                      .filter((temp) => temp.value)
                       .map((sizePart) => (
-                        <td className="">
+                        <td key={`${size.name}-${sizePart.name}`}>
                           <input
                             type="number"
                             className="input input-sm w-[5rem]"
@@ -152,7 +156,7 @@ const AdminProductSizesInfo: React.FC<PropTypes> = ({
           <p className="font-bold">White Clothing Size Prices</p>
           <div className="flex flex-wrap gap-4">
             {inputValues.availableSizes
-              .filter((s) => s.value)
+              .filter((temp) => temp.value)
               .map((size) => (
                 <div className="flex items-center gap-2" key={size.name}>
                   <p className="text-sm ">{size.name}:</p>
@@ -165,7 +169,7 @@ const AdminProductSizesInfo: React.FC<PropTypes> = ({
           <p className="font-bold">Colored Clothing Size Prices</p>
           <div className="flex flex-wrap gap-4">
             {inputValues.availableSizes
-              .filter((s) => s.value)
+              .filter((temp) => temp.value)
               .map((size) => (
                 <div className="flex items-center gap-2" key={size.name}>
                   <p className="text-sm">{size.name}:</p>

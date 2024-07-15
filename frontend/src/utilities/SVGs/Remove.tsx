@@ -5,9 +5,9 @@ const Remove = ({
   height = 48,
   color = 'currentColor',
 }: {
-  width?: number;
-  height?: number;
   color?: string;
+  height?: number;
+  width?: number;
 }) => {
   return (
     <svg

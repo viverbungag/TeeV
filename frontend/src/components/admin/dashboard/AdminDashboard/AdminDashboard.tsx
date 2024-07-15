@@ -1,9 +1,7 @@
 import React from 'react';
-import { getProperties } from 'aws-amplify/storage';
-import { list, getUrl } from 'aws-amplify/storage';
 
 const AdminDashboard = () => {
-  return <div></div>;
+  return <div />;
 };
 
 export default AdminDashboard;

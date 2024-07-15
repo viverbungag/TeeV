@@ -1,6 +1,7 @@
 'use client';
+import React from 'react';
+
 import AmplifyProvider from '@/app/amplify/amplify-config';
-import React, { useState } from 'react';
 
 type ProvidersProps = {
   children: React.ReactNode;

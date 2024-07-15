@@ -2,16 +2,17 @@
 
 import React from 'react';
 import Image from 'next/image';
+
 import useWindowSize from '@/utilities/useWindowSize';
 
 type PropTypes = {
-  srcSm?: string;
-  srcMd?: string;
-  srcLg?: string;
-  srcXl?: string;
-  src2Xl: string;
   alt: string;
   className: string;
+  src2Xl: string;
+  srcLg?: string;
+  srcMd?: string;
+  srcSm?: string;
+  srcXl?: string;
 };
 
 const ResponsiveImage: React.FC<PropTypes> = ({

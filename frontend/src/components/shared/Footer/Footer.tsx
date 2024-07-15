@@ -61,7 +61,7 @@ const Footer = () => {
         </div>
         <div className="hidden sm:flex sm:flex-col md:flex-row gap-4">
           {footerContents.map((content) => (
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4" key={content.header}>
               <h3
                 className={`${IntegralCF.className} text-primaryT text-[1.3rem]`}
               >
@@ -69,7 +69,7 @@ const Footer = () => {
               </h3>
               <div className={`${Coolvetica.className} text-white`}>
                 {content.links.map((link) => (
-                  <p>{link.name}</p>
+                  <p key={link.name}>{link.name}</p>
                 ))}
               </div>
             </div>

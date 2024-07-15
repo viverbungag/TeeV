@@ -1,10 +1,10 @@
 import React from 'react';
 
 type PropTypes = {
-  label: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
-  name: string;
   checked: boolean;
+  label: string;
+  name: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 const AdminToggle: React.FC<PropTypes> = ({

@@ -1,10 +1,12 @@
 'use client';
 
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Scrollbar } from 'swiper/modules';
 import Image from 'next/image';
 
+import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// eslint-disable-next-line no-restricted-imports
 import './CardCarousel.css';
 
 type PropTypes = {

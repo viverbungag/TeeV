@@ -1,18 +1,16 @@
 'use client';
 
+import React, { useState } from 'react';
+
 import AdminInputWithLabel from '@/components/admin/shared/AdminInputWithLabel';
 import AdminProductSizesInfo from '@/components/admin/shared/AdminProductSizeInfo';
 import AdminProductVisibilityRadio from '@/components/admin/shared/AdminProductVisibilityRadio';
-import AdminToggle from '@/components/admin/shared/AdminToggle';
 import AdminToggleWithBody from '@/components/admin/shared/AdminToggleWithBody';
-import Add from '@/utilities/SVGs/Add';
-import Remove from '@/utilities/SVGs/Remove';
+import type { InputValues } from '@/utilities/types/AdminFormTypes';
 import {
   ClothingSizeParts,
   ClothingSizes,
-  InputValues,
 } from '@/utilities/types/AdminFormTypes';
-import React, { useState } from 'react';
 
 const initialAvailableSizes = Object.keys(ClothingSizes).map((size) => ({
   name: ClothingSizes[size as keyof typeof ClothingSizes],
@@ -197,7 +195,7 @@ const NewProductForm = () => {
                   <p className="font-bold">Categories</p>
                   <div className=" flex flex-col gap-2">
                     {categories.map((category) => (
-                      <div className="flex gap-2">
+                      <div className="flex gap-2" key={category}>
                         <input type="checkbox" className="checkbox" />
                         <p>{category}</p>
                       </div>

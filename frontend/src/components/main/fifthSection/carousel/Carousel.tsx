@@ -1,22 +1,25 @@
 'use client';
 
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
 import Image from 'next/image';
 
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// eslint-disable-next-line no-restricted-imports
 import './Carousel.css';
+
 import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
-import Account from '@/utilities/SVGs/Account';
 import Oswald from '@/utilities/fonts/oswald/oswald';
+import Account from '@/utilities/SVGs/Account';
 
 type PropTypes = {
   contents: Array<{
-    title: string;
-    content: string;
-    authorName: string;
     authorDescription: string;
+    authorName: string;
+    content: string;
     imageSrc: string;
+    title: string;
   }>;
 };
 
@@ -31,7 +34,7 @@ const Carousel: React.FC<PropTypes> = ({ contents }) => {
                 <p
                   className={`${Oswald.className} text-black absolute lg:-top-6 lg:-inset-8 -top-8 text-[3rem] lg:text-[4rem] italic leading-tight`}
                 >
-                  "
+                  &quot;
                 </p>
                 <div className="flex flex-col gap-8">
                   <div className="flex flex-col gap-4">

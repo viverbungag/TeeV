@@ -1,5 +1,6 @@
-import { PrintType } from '@/utilities/types/PriceSettingTypes';
 import React from 'react';
+
+import type { PrintType } from '@/utilities/types/PriceSettingTypes';
 
 type PropTypes = {
   frontPrintPrice: Array<PrintType>;
@@ -72,7 +73,7 @@ const PriceTableWithLegends: React.FC<PropTypes> = ({
             </tr>
           </thead>
           <tbody>
-            {new Array(numberOfColors).fill(0).map((_, index) => (
+            {new Array(numberOfColors).fill(0).map((__, index) => (
               <tr key={index}>
                 <td className="bg-numberOfColorsIndicationBackground border-r-2 border-[#A9A9A9]">
                   <input

@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
-import Star from '@/utilities/SVGs/Star';
-import Oswald from '@/utilities/fonts/oswald/oswald';
+
 import Button from '@/components/shared/Button';
+import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
+import Oswald from '@/utilities/fonts/oswald/oswald';
 import Call from '@/utilities/SVGs/Call';
+import Star from '@/utilities/SVGs/Star';
 
 const NavigationHeader = () => {
   return (

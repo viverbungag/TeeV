@@ -1,8 +1,9 @@
+import React from 'react';
+import Link from 'next/link';
+
 import Cabinet from '@/utilities/SVGs/Cabinet';
 import Clothes from '@/utilities/SVGs/Clothes';
 import Dashboard from '@/utilities/SVGs/Dashboard';
-import Link from 'next/link';
-import React from 'react';
 
 const AdminNavigation = () => {
   return (

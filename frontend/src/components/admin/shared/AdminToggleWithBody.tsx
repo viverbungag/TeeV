@@ -1,15 +1,16 @@
+import React from 'react';
+
 import AdminToggle from '@/components/admin/shared/AdminToggle';
 import Add from '@/utilities/SVGs/Add';
 import Remove from '@/utilities/SVGs/Remove';
-import { InputValues } from '@/utilities/types/AdminFormTypes';
-import React from 'react';
+import type { InputValues } from '@/utilities/types/AdminFormTypes';
 
 type PropTypes = {
-  toggleName: 'hasFiberInfo' | 'hasFeaturesInfo';
-  itemsName: 'fiberInfoItems' | 'featureInfoItems';
   inputValues: InputValues;
+  itemsName: 'fiberInfoItems' | 'featureInfoItems';
   setInputValues: React.Dispatch<React.SetStateAction<InputValues>>;
   toggleLabel: string;
+  toggleName: 'hasFiberInfo' | 'hasFeaturesInfo';
 };
 
 const AdminToggleWithBody: React.FC<PropTypes> = ({
@@ -71,7 +72,7 @@ const AdminToggleWithBody: React.FC<PropTypes> = ({
                 <textarea
                   className="textarea textarea-md w-full"
                   value={value}
-                  onChange={(e) => updateItem(index, e.target.value)}
+                  onChange={(event) => updateItem(index, event.target.value)}
                 />
                 {index === inputValues[itemsName].length - 1 ? (
                   <button

@@ -1,20 +1,16 @@
-import { redirect } from 'next/navigation';
-import {
-  signUp,
-  confirmSignUp,
-  signIn,
-  signOut,
-  resendSignUpCode,
-} from 'aws-amplify/auth';
-import { getErrorMessage } from '@/utilities/get-error-message';
 import { toast } from 'react-toastify';
+import { redirect } from 'next/navigation';
+
+import { signIn, signOut } from 'aws-amplify/auth';
+
+import { getErrorMessage } from '@/utilities/get-error-message';
 
 export async function handleSignIn(
-  prevState: { status: string; message: string } | undefined,
+  prevState: { message: string; status: string } | undefined,
   formData: FormData
-): Promise<{ status: string; message: string }> {
+): Promise<{ message: string; status: string }> {
   try {
-    const { isSignedIn, nextStep } = await signIn({
+    await signIn({
       username: String(formData.get('username')),
       password: String(formData.get('password')),
     });
@@ -30,7 +26,7 @@ export async function handleSignOut() {
   try {
     await signOut();
   } catch (error) {
-    console.log(getErrorMessage(error));
+    console.error(getErrorMessage(error));
   }
   redirect('/admin/login');
 }

@@ -1,11 +1,10 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
-import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
-import Oswald from '@/utilities/fonts/oswald/oswald';
-import Providers from '@/app/Providers';
-import ConfigureAmplifyClientSide from '@/app/amplify/amplify-config';
 import { Slide, ToastContainer } from 'react-toastify';
+import type { Metadata } from 'next';
+
+import Providers from '@/app/Providers';
+
+// eslint-disable-next-line no-restricted-imports
+import './globals.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata: Metadata = {

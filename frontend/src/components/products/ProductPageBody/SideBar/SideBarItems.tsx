@@ -1,9 +1,10 @@
-import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
 import React from 'react';
 
+import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
+
 type PropTypes = {
-  title: string;
   children: React.ReactNode;
+  title: string;
 };
 
 const SideBarItems: React.FC<PropTypes> = ({ title, children }) => {

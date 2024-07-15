@@ -1,7 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 import Link from 'next/link';
+
+import { motion } from 'framer-motion';
+
+import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 
 const variants = {
   open: {
@@ -20,8 +22,6 @@ const variants = {
     },
   },
 };
-
-const colors = ['#FF008C', '#D309E1', '#9C1AFF', '#7700FF', '#4400FF'];
 
 const NavigationMenuItemToggle = ({ item }: { item: any }) => {
   // const style = { border: `2px solid ${colors[i]}` };

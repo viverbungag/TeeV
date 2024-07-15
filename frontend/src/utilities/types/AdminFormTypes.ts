@@ -1,13 +1,13 @@
 export enum ClothingSizes {
-  XS = 'XS',
-  S = 'S',
-  M = 'M',
-  LG = 'LG',
-  XL = 'XL',
   '2XL' = '2XL',
   '3XL' = '3XL',
   '4XL' = '4XL',
   '5XL' = '5XL',
+  LG = 'LG',
+  M = 'M',
+  S = 'S',
+  XL = 'XL',
+  XS = 'XS',
 }
 
 export enum ClothingSizeParts {
@@ -25,19 +25,19 @@ type sizesInfo = {
 };
 
 export type InputValues = {
-  hasFiberInfo: boolean;
-  fiberInfoItems: string[];
-  hasFeaturesInfo: boolean;
-  featureInfoItems: string[];
-  isProductVisibleInWebsite: boolean;
-  hasSizeInfo: boolean;
-  availableSizes: Array<{
-    name: ClothingSizes;
-    value: boolean;
-  }>;
   availableClotheSizeParts: Array<{
     name: ClothingSizeParts;
     value: boolean;
   }>;
+  availableSizes: Array<{
+    name: ClothingSizes;
+    value: boolean;
+  }>;
+  featureInfoItems: string[];
+  fiberInfoItems: string[];
+  hasFeaturesInfo: boolean;
+  hasFiberInfo: boolean;
+  hasSizeInfo: boolean;
+  isProductVisibleInWebsite: boolean;
   sizesInfo: sizesInfo;
 };

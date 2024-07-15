@@ -1,9 +1,8 @@
-import PriceTableWithLegends from '@/components/admin/price-settings/PriceTableWithLegends/PriceTableWithLegends';
-import {
-  ClothePackagingType,
-  PrintType,
-} from '@/utilities/types/PriceSettingTypes';
 import React, { useState } from 'react';
+
+import PriceTableWithLegends from '@/components/admin/price-settings/PriceTableWithLegends/PriceTableWithLegends';
+import type { PrintType } from '@/utilities/types/PriceSettingTypes';
+import { ClothePackagingType } from '@/utilities/types/PriceSettingTypes';
 
 const numberOfColors = 9;
 const initialPricePerColorQuantity = {
@@ -138,6 +137,7 @@ const initialData = {
 };
 
 const AdminPriceSettings = () => {
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const [data, setData] = useState<{ frontPrintPrice: Array<PrintType> }>(
     initialData
   );

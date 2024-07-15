@@ -1,16 +1,8 @@
-import Button from '@/components/shared/Button';
-import CardCarousel from '@/components/shared/CardCarousel/CardCarousel';
+import React from 'react';
+import Image from 'next/image';
+
 import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
 import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
-import Oswald from '@/utilities/fonts/oswald/oswald';
-import Image from 'next/image';
-import React from 'react';
-
-const contents = [
-  { imageSrc: '/main/secondSection/carouselPic1.png' },
-  { imageSrc: '/main/secondSection/carouselPic1.png' },
-  { imageSrc: '/main/secondSection/carouselPic1.png' },
-];
 
 // const SecondSection = () => {
 //   return (
@@ -73,9 +65,11 @@ const SecondSection = () => {
         <div className="flex md:flex-row flex-col gap-4 px-8">
           {products.map((product) => {
             return (
-              <div className="flex flex-col items-center gap-2">
+              <div
+                className="flex flex-col items-center gap-2"
+                key={product.label}
+              >
                 <Image
-                  key={product.label}
                   src={product.imageSrc}
                   width={300}
                   height={300}

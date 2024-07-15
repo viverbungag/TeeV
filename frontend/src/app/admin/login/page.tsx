@@ -1,5 +1,6 @@
-import LoginPage from '@/components/admin/login/LoginPage';
 import React from 'react';
+
+import LoginPage from '@/components/admin/login/LoginPage';
 
 const page = () => {
   return <LoginPage />;

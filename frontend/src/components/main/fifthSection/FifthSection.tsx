@@ -1,10 +1,11 @@
+import React from 'react';
+import Image from 'next/image';
+
 import Carousel from '@/components/main/fifthSection/carousel/Carousel';
 import Button from '@/components/shared/Button';
 import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
 import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 import Oswald from '@/utilities/fonts/oswald/oswald';
-import Image from 'next/image';
-import React from 'react';
 
 const reviews = [
   {
@@ -71,8 +72,8 @@ const FifthSection = () => {
             className={`${Coolvetica.className} text-white relative text-[1.3rem] mb-4`}
           >
             Transform your business into a brand seamlessly. From rebranding to
-            designing and printing, we've got it covered. Focus on what you do
-            best while we handle the heavy lifting.
+            designing and printing, we&apos;ve got it covered. Focus on what you
+            do best while we handle the heavy lifting.
           </p>
           <Button styleType="primary">TALK TO A DESIGNER</Button>
         </div>

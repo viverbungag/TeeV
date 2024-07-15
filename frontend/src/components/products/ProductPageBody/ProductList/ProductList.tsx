@@ -1,8 +1,8 @@
+import React from 'react';
+import Image from 'next/image';
+
 import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
 import Oswald from '@/utilities/fonts/oswald/oswald';
-import { color } from 'framer-motion';
-import Image from 'next/image';
-import React from 'react';
 
 const products = [
   {
@@ -123,7 +123,7 @@ const ProductList = () => {
                   key={color}
                   className={`w-4 h-4 rounded`}
                   style={{ backgroundColor: `#${color}` }}
-                ></div>
+                />
               ))}
 
               <div

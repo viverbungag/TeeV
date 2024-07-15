@@ -1,18 +1,11 @@
-import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 import React from 'react';
+import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
-import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
+
 import Button from '@/components/shared/Button';
 import ResponsiveImage from '@/components/shared/ResponsiveImage';
-import CardCarousel from '@/components/shared/CardCarousel/CardCarousel';
-import Oswald from '@/utilities/fonts/oswald/oswald';
-import Marquee from 'react-fast-marquee';
-
-const contents = [
-  { imageSrc: '/main/firstSection/carouselPic1.png' },
-  { imageSrc: '/main/firstSection/carouselPic2.png' },
-  { imageSrc: '/main/firstSection/carouselPic3.png' },
-];
+import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
+import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 
 const FirstSection = () => {
   return (
@@ -67,7 +60,7 @@ const FirstSection = () => {
                   <h3
                     className={`${Coolvetica.className} text-[1.3rem] text-black text-center`}
                   >
-                    COMPANIES WE'VE PARTNERED BEFORE
+                    COMPANIES WE&quot;VE PARTNERED BEFORE
                   </h3>
                   <Marquee>
                     <div className="flex sm:gap-12 gap-8 sm:pl-10 pl-6 items-center justify-center">

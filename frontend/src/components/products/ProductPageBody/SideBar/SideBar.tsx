@@ -1,9 +1,8 @@
+import React from 'react';
+
 import SideBarCheckboxes from '@/components/products/ProductPageBody/SideBar/SideBarCheckboxes';
 import SideBarItems from '@/components/products/ProductPageBody/SideBar/SideBarItems';
-import SearchInput from '@/components/shared/SearchInput';
-import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
 import Oswald from '@/utilities/fonts/oswald/oswald';
-import React from 'react';
 
 const categories = [
   'T-Shirts',
@@ -31,13 +30,13 @@ const colors = [
 
 const bodyTypes = ['Men/Unisex', 'Women', 'Youth'];
 
-const materials = [
-  'Cotton',
-  'Cotton/Poly Blend',
-  'Tri-Blend',
-  'Fleece',
-  'Other',
-];
+// const materials = [
+//   'Cotton',
+//   'Cotton/Poly Blend',
+//   'Tri-Blend',
+//   'Fleece',
+//   'Other',
+// ];
 
 const brands = [
   'AS Colour',

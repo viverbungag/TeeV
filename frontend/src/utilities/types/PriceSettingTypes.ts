@@ -1,6 +1,6 @@
 export enum ClothePackagingType {
-  TSHIRT = 'TSHIRT',
   HOODIE = 'HOODIE',
+  TSHIRT = 'TSHIRT',
 }
 
 type PricePerColorQuantity = {
@@ -17,7 +17,7 @@ type PricePerColorQuantity = {
 
 export type PrintType = {
   from: number;
-  to: number;
   markup: number;
   pricePerColorQuantity: PricePerColorQuantity;
+  to: number;
 };

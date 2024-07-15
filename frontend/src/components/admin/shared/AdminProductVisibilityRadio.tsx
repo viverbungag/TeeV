@@ -1,5 +1,7 @@
 import React from 'react';
 
+import type { InputValues } from '@/utilities/types/AdminFormTypes';
+
 type PropTypes = {
   inputValues: InputValues;
   setInputValues: React.Dispatch<React.SetStateAction<InputValues>>;

@@ -1,5 +1,6 @@
-import NewProductForm from '@/components/admin/product/new/NewProductForm/NewProductForm';
 import React from 'react';
+
+import NewProductForm from '@/components/admin/product/new/NewProductForm/NewProductForm';
 
 const page = () => {
   return (

@@ -1,6 +1,6 @@
+import React, { useEffect, useRef, useState } from 'react';
+
 import NewCategoryForm from '@/components/admin/category/new/NewCategoryForm/NewCategoryForm';
-import Link from 'next/link';
-import React, { useRef, useState, useEffect } from 'react';
 
 const AdminCategories = () => {
   const [showModal, setShowModal] = useState(false);

@@ -4,8 +4,8 @@ const Linkedin = ({
   width = 48,
   height = 48,
 }: {
-  width?: number;
   height?: number;
+  width?: number;
 }) => {
   return (
     <svg

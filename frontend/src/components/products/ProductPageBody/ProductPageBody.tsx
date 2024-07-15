@@ -1,6 +1,7 @@
+import React from 'react';
+
 import ProductList from '@/components/products/ProductPageBody/ProductList/ProductList';
 import SideBar from '@/components/products/ProductPageBody/SideBar/SideBar';
-import React from 'react';
 
 const ProductPageBody = () => {
   return (

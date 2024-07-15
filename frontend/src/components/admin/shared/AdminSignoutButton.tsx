@@ -1,6 +1,7 @@
 'use client';
-import { handleSignOut } from '@/app/amplify/cognito-actions';
 import React from 'react';
+
+import { handleSignOut } from '@/app/amplify/cognito-actions';
 
 const AdminSignoutButton = () => {
   return (

@@ -1,10 +1,11 @@
-import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
 import React from 'react';
 import Image from 'next/image';
-import Oswald from '@/utilities/fonts/oswald/oswald';
+
 import Coolvetica from '@/utilities/fonts/coolvetica/coolvetica';
-import PaintPalette from '@/utilities/SVGs/PaintPalette';
+import IntegralCF from '@/utilities/fonts/integralCF/integralCF';
+import Oswald from '@/utilities/fonts/oswald/oswald';
 import BasketballClothes from '@/utilities/SVGs/BasketballClothes';
+import PaintPalette from '@/utilities/SVGs/PaintPalette';
 import ShippingFast from '@/utilities/SVGs/ShippingFast';
 
 const items = [

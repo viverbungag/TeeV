@@ -1,5 +1,7 @@
+import type { ReactNode } from 'react';
+import React from 'react';
+
 import Oswald from '@/utilities/fonts/oswald/oswald';
-import React, { ReactNode } from 'react';
 
 type PropTypes = {
   children: ReactNode;

@@ -1,4 +1,7 @@
-import { NextServer, createServerRunner } from '@aws-amplify/adapter-nextjs';
+import {
+  createServerRunner,
+  type NextServer,
+} from '@aws-amplify/adapter-nextjs';
 import { fetchAuthSession, getCurrentUser } from 'aws-amplify/auth/server';
 
 const amplifyConfig = JSON.parse(
@@ -24,7 +27,7 @@ export async function authenticatedUser(context: NextServer.Context) {
 
         return user;
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     },
   });

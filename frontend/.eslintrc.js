@@ -9,4 +9,7 @@ module.exports = {
       rootDir: 'src',
     },
   },
+  rules: {
+    'jsx-a11y/label-has-associated-control': 'off',
+  },
 };

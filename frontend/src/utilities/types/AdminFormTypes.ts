@@ -6,10 +6,10 @@ export enum ClothingSizes {
   M = 'M',
   LG = 'LG',
   XL = 'XL',
-  'XL2' = '2XL',
-  'XL3' = '3XL',
-  'XL4' = '4XL',
-  'XL5' = '5XL',
+  '2XL' = '2XL',
+  '3XL' = '3XL',
+  '4XL' = '4XL',
+  '5XL' = '5XL',
 }
 
 export enum ClothingSizeParts {
@@ -41,5 +41,17 @@ export type InputValues = {
   hasFiberInfo: boolean;
   hasSizeInfo: boolean;
   isProductVisibleInWebsite: boolean;
+  pricesPerColorOnColoredClothes: {
+    [key in ClothingSizes]: {
+      markup: number;
+      originalPrice: number;
+    };
+  };
+  pricesPerColorOnWhiteClothes: {
+    [key in ClothingSizes]: {
+      markup: number;
+      originalPrice: number;
+    };
+  };
   sizesInfo: sizesInfo;
 };

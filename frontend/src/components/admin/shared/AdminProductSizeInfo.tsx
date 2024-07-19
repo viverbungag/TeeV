@@ -150,7 +150,7 @@ const AdminProductSizesInfo: React.FC<PropTypes> = ({
             </tbody>
           </table>
         </div>
-        <div className="flex flex-col gap-4">
+        {/* <div className="flex flex-col gap-4">
           <p className="font-bold">White Clothing Size Prices</p>
           <div className="flex flex-wrap gap-4">
             {inputValues.availableSizes
@@ -175,7 +175,7 @@ const AdminProductSizesInfo: React.FC<PropTypes> = ({
                 </div>
               ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -26,9 +26,9 @@ public class ProductService {
 
     public Integer calculateFinalPrice(CalculateFinalPriceBody calculateFinalPriceBody) {
 
-        ObjectMapper mapper = new ObjectMapper();
-
-        Integer numberOfColors = calculateFinalPriceBody.numberOfColors();
+        Integer frontNumberOfColors = calculateFinalPriceBody.frontNumberOfColors();
+        Integer backNumberOfColors = calculateFinalPriceBody.backNumberOfColors();
+        String quantityBySizes = calculateFinalPriceBody.quantityBySizes();
         Product product = productRepository.findById(calculateFinalPriceBody.productId()).orElseThrow();
 
         PriceSettings priceSettings = priceSettingsRepository.findById(1L).orElse(new PriceSettings());
@@ -36,19 +36,9 @@ public class ProductService {
         String backPrintPrice = priceSettings.getBackPrintPrice();
 
         try{
-
-            // **** FRONT CALCULATION ****
-//            Map frontQuantityBySizes = mapper.readValue(calculateFinalPriceBody.frontQuantityBySizes(), Map.class);
-//            Integer frontTotalQuantity = frontQuantityBySizes.values().stream().mapToInt(value -> (Integer) value).sum();
-
-            // **** BACK CALCULATION ****
-//            Map backQuantityBySizes = mapper.readValue(calculateFinalPriceBody.backQuantityBySizes(), Map.class);
-//            Integer backTotalQuantity = backQuantityBySizes.values().stream().mapToInt(value -> (Integer) value).sum();
-
-            Float frontPrintCharge = calculateColorPrintCharge(calculateFinalPriceBody.frontQuantityBySizes(), numberOfColors, frontPrintPrice);
-            Float backPrintCharge = calculateColorPrintCharge(calculateFinalPriceBody.backQuantityBySizes(), numberOfColors, backPrintPrice);
-
-
+            ObjectMapper mapper = new ObjectMapper();
+            Float frontPrintCharge = calculateColorPrintCharge(mapper, quantityBySizes, frontNumberOfColors, frontPrintPrice);
+            Float backPrintCharge = calculateColorPrintCharge(mapper, quantityBySizes, backNumberOfColors, backPrintPrice);
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -56,9 +46,8 @@ public class ProductService {
         return 0;
     }
 
-    private Float calculateColorPrintCharge(String quantityBySizes, Integer numberOfColors, String printPrice) {
+    private Float calculateColorPrintCharge(ObjectMapper mapper, String quantityBySizes, Integer numberOfColors, String printPrice) {
         try {
-            ObjectMapper mapper = new ObjectMapper();
             Map quantityBySizesMap = mapper.readValue(quantityBySizes, Map.class);
             Integer totalQuantity = quantityBySizesMap.values().stream().mapToInt(value -> (Integer) value).sum();
             ArrayList printPriceMap = mapper.readValue(printPrice, ArrayList.class);
@@ -71,7 +60,11 @@ public class ProductService {
 
                 if (totalQuantity >= from && totalQuantity <= to) {
                     Map<String, Object> pricePerColorQuantityContents = (Map<String, Object>) contents.get("pricePerColorQuantity");
-                    return ((Double) pricePerColorQuantityContents.get(numberOfColors.toString())).floatValue();
+                    try{
+                        return ((Double) pricePerColorQuantityContents.get(numberOfColors.toString())).floatValue();
+                    }catch(ClassCastException e){
+                        return ((Integer) pricePerColorQuantityContents.get(numberOfColors.toString())).floatValue();
+                    }
                 }
             }
         } catch(Exception e) {

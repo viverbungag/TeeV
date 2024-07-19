@@ -1,8 +1,8 @@
 package com.teevision.ecommerce_backend.product.dto;
 
 public record CalculateFinalPriceBody(
-        String frontQuantityBySizes,
-        String backQuantityBySizes,
-        Integer numberOfColors,
+        String quantityBySizes,
+        Integer frontNumberOfColors,
+        Integer backNumberOfColors,
         Long productId) {
 }

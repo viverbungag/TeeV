@@ -11,6 +11,7 @@ import {
   ClothingSizeParts,
   ClothingSizes,
 } from '@/utilities/types/AdminFormTypes';
+import PriceForEachSizeSection from '@/components/admin/product/new/NewProductForm/PriceForEachSizeSection/PriceForEachSizeSection';
 
 const initialAvailableSizes = Object.keys(ClothingSizes).map((size) => ({
   name: ClothingSizes[size as keyof typeof ClothingSizes],
@@ -71,6 +72,82 @@ const initialValues = {
   hasSizeInfo: false,
   availableSizes: initialAvailableSizes,
   availableClotheSizeParts: initialAvailableClotheSizeParts,
+  pricesPerColorOnWhiteClothes: {
+    [ClothingSizes.XS]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes.S]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes.M]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes.LG]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes.XL]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes['2XL']]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes['3XL']]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes['4XL']]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes['5XL']]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+  },
+  pricesPerColorOnColoredClothes: {
+    [ClothingSizes.XS]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes.S]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes.M]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes.LG]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes.XL]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes['2XL']]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes['3XL']]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes['4XL']]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+    [ClothingSizes['5XL']]: {
+      markup: 1,
+      originalPrice: 0,
+    },
+  },
   sizesInfo: {
     [ClothingSizes.XS]: {
       [ClothingSizeParts['BODY LENGTH']]: '',
@@ -107,28 +184,28 @@ const initialValues = {
       [ClothingSizeParts['NECK CIRCUMFERENCE']]: '',
       [ClothingSizeParts['SLEEVE LENGTH']]: '',
     },
-    [ClothingSizes['XL2']]: {
+    [ClothingSizes['2XL']]: {
       [ClothingSizeParts['BODY LENGTH']]: '',
       [ClothingSizeParts['BODY WIDTH']]: '',
       [ClothingSizeParts['FULL BODY LENGTH']]: '',
       [ClothingSizeParts['NECK CIRCUMFERENCE']]: '',
       [ClothingSizeParts['SLEEVE LENGTH']]: '',
     },
-    [ClothingSizes['XL3']]: {
+    [ClothingSizes['3XL']]: {
       [ClothingSizeParts['BODY LENGTH']]: '',
       [ClothingSizeParts['BODY WIDTH']]: '',
       [ClothingSizeParts['FULL BODY LENGTH']]: '',
       [ClothingSizeParts['NECK CIRCUMFERENCE']]: '',
       [ClothingSizeParts['SLEEVE LENGTH']]: '',
     },
-    [ClothingSizes['XL4']]: {
+    [ClothingSizes['4XL']]: {
       [ClothingSizeParts['BODY LENGTH']]: '',
       [ClothingSizeParts['BODY WIDTH']]: '',
       [ClothingSizeParts['FULL BODY LENGTH']]: '',
       [ClothingSizeParts['NECK CIRCUMFERENCE']]: '',
       [ClothingSizeParts['SLEEVE LENGTH']]: '',
     },
-    [ClothingSizes['XL5']]: {
+    [ClothingSizes['5XL']]: {
       [ClothingSizeParts['BODY LENGTH']]: '',
       [ClothingSizeParts['BODY WIDTH']]: '',
       [ClothingSizeParts['FULL BODY LENGTH']]: '',
@@ -220,6 +297,24 @@ const NewProductForm = () => {
               inputValues={inputValues}
               setInputValues={setInputValues}
             />
+          </div>
+          <div className="flex gap-4">
+            <div className="w-full p-8 rounded bg-background4">
+              <PriceForEachSizeSection
+                inputValues={inputValues}
+                setInputValues={setInputValues}
+                pricePerColorType="pricesPerColorOnWhiteClothes"
+                headerLabel="Prices for white"
+              />
+            </div>
+            <div className="w-full p-8 rounded bg-background4">
+              <PriceForEachSizeSection
+                inputValues={inputValues}
+                setInputValues={setInputValues}
+                pricePerColorType="pricesPerColorOnColoredClothes"
+                headerLabel="Prices for colored"
+              />
+            </div>
           </div>
         </div>
       </form>

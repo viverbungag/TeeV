@@ -1,5 +1,7 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import AmplifyProvider from '@/app/amplify/amplify-config';
 
@@ -8,7 +10,12 @@ type ProvidersProps = {
 };
 
 const Providers: React.FC<ProvidersProps> = ({ children }) => {
-  return <AmplifyProvider>{children}</AmplifyProvider>;
+  const [client] = useState(new QueryClient());
+  return (
+    <QueryClientProvider client={client}>
+      <AmplifyProvider>{children}</AmplifyProvider>
+    </QueryClientProvider>
+  );
 };
 
 export default Providers;

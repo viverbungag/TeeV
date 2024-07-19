@@ -25,26 +25,39 @@ const initialAvailableClotheSizeParts = Object.keys(ClothingSizeParts).map(
 );
 
 const categories = [
-  'T-Shirts',
-  'Swearshirts',
-  'Long Sleeves',
-  'Hoodies',
-  'V-Necks',
+  'Short Sleeve',
+  'Long Sleeve',
+  'Polo',
+  'Performance',
+  'Long sleeve Polo',
+  'Tote Bag',
+  'Hoodie',
+  'Crewneck',
+  'Hats',
+  'Beanies',
+  'Ladies Shirts',
+  'Toddler Tees',
   'Tank Tops',
-  'Polo Shirts',
-  'Short Sleeves',
-  'Dri-fit',
-  'Women',
+  'Pajama',
 ];
 
 const brands = [
+  'AS Colour',
+  'Bella + Canvas',
+  'Boxercraft',
+  'District',
   'Gildan',
   'Hanes',
-  'Port & Company',
-  'Sport-Tek',
-  'Bella + Canvas',
+  'Independent',
+  'Jerzees',
+  'La Apparel',
+  'Liberty',
   'Next Level',
-  'Anvil',
+  'Nike',
+  'Prime Line',
+  'Team 365',
+  'Tie-Dye',
+  'UltraClub',
 ];
 
 const brandStyle = ['5000', '6004', '12600'];
@@ -94,28 +107,28 @@ const initialValues = {
       [ClothingSizeParts['NECK CIRCUMFERENCE']]: '',
       [ClothingSizeParts['SLEEVE LENGTH']]: '',
     },
-    [ClothingSizes['2XL']]: {
+    [ClothingSizes['XL2']]: {
       [ClothingSizeParts['BODY LENGTH']]: '',
       [ClothingSizeParts['BODY WIDTH']]: '',
       [ClothingSizeParts['FULL BODY LENGTH']]: '',
       [ClothingSizeParts['NECK CIRCUMFERENCE']]: '',
       [ClothingSizeParts['SLEEVE LENGTH']]: '',
     },
-    [ClothingSizes['3XL']]: {
+    [ClothingSizes['XL3']]: {
       [ClothingSizeParts['BODY LENGTH']]: '',
       [ClothingSizeParts['BODY WIDTH']]: '',
       [ClothingSizeParts['FULL BODY LENGTH']]: '',
       [ClothingSizeParts['NECK CIRCUMFERENCE']]: '',
       [ClothingSizeParts['SLEEVE LENGTH']]: '',
     },
-    [ClothingSizes['4XL']]: {
+    [ClothingSizes['XL4']]: {
       [ClothingSizeParts['BODY LENGTH']]: '',
       [ClothingSizeParts['BODY WIDTH']]: '',
       [ClothingSizeParts['FULL BODY LENGTH']]: '',
       [ClothingSizeParts['NECK CIRCUMFERENCE']]: '',
       [ClothingSizeParts['SLEEVE LENGTH']]: '',
     },
-    [ClothingSizes['5XL']]: {
+    [ClothingSizes['XL5']]: {
       [ClothingSizeParts['BODY LENGTH']]: '',
       [ClothingSizeParts['BODY WIDTH']]: '',
       [ClothingSizeParts['FULL BODY LENGTH']]: '',
@@ -163,29 +176,6 @@ const NewProductForm = () => {
                   toggleLabel="Is info on Features shown?"
                   itemsName="featureInfoItems"
                 />
-              </div>
-              <div className="flex gap-8">
-                <div className="flex flex-col gap-4 p-8 w-full rounded bg-background4">
-                  <p className="font-bold">Prices general data</p>
-                  <div className=" pl-2 flex flex-col gap-2">
-                    <AdminInputWithLabel label="SKU" bold={false} />
-                    <AdminInputWithLabel label="Starting Price" bold={false} />
-                    <AdminInputWithLabel label="Sales Price" bold={false} />
-                  </div>
-                </div>
-                <div className="flex flex-col gap-4 p-8 w-full rounded bg-background4">
-                  <p className="font-bold">Prices order data</p>
-                  <div className=" pl-2 flex flex-col gap-2">
-                    <AdminInputWithLabel
-                      label="Minimum Purchase Quantity"
-                      bold={false}
-                    />
-                    <AdminInputWithLabel
-                      label="Maximum Purchase Quantity"
-                      bold={false}
-                    />
-                  </div>
-                </div>
               </div>
             </div>
             <div className="flex flex-col gap-8 w-[20rem]">

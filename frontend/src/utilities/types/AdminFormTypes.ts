@@ -1,13 +1,15 @@
+/* eslint-disable typescript-sort-keys/string-enum */
+
 export enum ClothingSizes {
-  '2XL' = '2XL',
-  '3XL' = '3XL',
-  '4XL' = '4XL',
-  '5XL' = '5XL',
-  LG = 'LG',
-  M = 'M',
-  S = 'S',
-  XL = 'XL',
   XS = 'XS',
+  S = 'S',
+  M = 'M',
+  LG = 'LG',
+  XL = 'XL',
+  'XL2' = '2XL',
+  'XL3' = '3XL',
+  'XL4' = '4XL',
+  'XL5' = '5XL',
 }
 
 export enum ClothingSizeParts {

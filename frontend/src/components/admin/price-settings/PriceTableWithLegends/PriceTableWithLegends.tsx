@@ -1,26 +1,42 @@
 import React from 'react';
 
 import type { PrintType } from '@/utilities/types/PriceSettingTypes';
+import type { PriceSettings } from '@/utilities/types/shared.types';
 
 type PropTypes = {
-  frontPrintPrice: Array<PrintType>;
+  keyName: string;
   numberOfColors: number;
+  printPrice: Array<PrintType>;
+  setData: React.Dispatch<React.SetStateAction<PriceSettings>>;
 };
 
 const PriceTableWithLegends: React.FC<PropTypes> = ({
-  frontPrintPrice,
+  printPrice,
   numberOfColors,
+  keyName,
+  setData,
 }) => {
+  const pricesOnChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    colorIndex: number,
+    rangeIndex: number
+  ) => {
+    const value = event.target.value;
+    const newPrice = [...printPrice];
+    newPrice[rangeIndex].pricePerColorQuantity[String(colorIndex)] =
+      Number(value);
+    setData((prevData: any) => ({
+      ...prevData,
+      [keyName]: newPrice,
+    }));
+  };
+
   return (
     <div className="flex flex-col gap-8">
       <div className="flex gap-4">
         <p className="font-bold">Legends:</p>
         <div className="flex gap-4">
           <div className="flex items-center gap-2">
-            <div className="flex items-center gap-2">
-              <div className="bg-priceMarkupIndicationBackground w-[1rem] h-[1rem]" />
-              <p>Markup</p>
-            </div>
             <div className="bg-clothingQuantityFromAndToIndicationBackground w-[1rem] h-[1rem]" />
             <p>From & To</p>
           </div>
@@ -37,17 +53,9 @@ const PriceTableWithLegends: React.FC<PropTypes> = ({
       <div className="max-w-[80rem] overflow-x-auto">
         <table className="table">
           <thead className="border-[#A9A9A9] border-b-2">
-            <tr className="bg-priceMarkupIndicationBackground">
-              <th>Markup</th>
-              {frontPrintPrice.map((price, index) => (
-                <th key={price.from + '-' + String(index)}>
-                  <input type="text" className="input input-sm w-[4rem]" />
-                </th>
-              ))}
-            </tr>
             <tr className="bg-clothingQuantityFromAndToIndicationBackground">
               <th>from</th>
-              {frontPrintPrice.map((price, index) => (
+              {printPrice.map((price, index) => (
                 <th key={price.from + '-' + String(index)}>
                   <input
                     type="text"
@@ -60,7 +68,7 @@ const PriceTableWithLegends: React.FC<PropTypes> = ({
             </tr>
             <tr className="bg-clothingQuantityFromAndToIndicationBackground">
               <th>to</th>
-              {frontPrintPrice.map((price, index) => (
+              {printPrice.map((price, index) => (
                 <th key={price.from + '-' + String(index)}>
                   <input
                     type="text"
@@ -73,7 +81,7 @@ const PriceTableWithLegends: React.FC<PropTypes> = ({
             </tr>
           </thead>
           <tbody>
-            {new Array(numberOfColors).fill(0).map((__, index) => (
+            {new Array(numberOfColors).fill(0).map((__, index: number) => (
               <tr key={index}>
                 <td className="bg-numberOfColorsIndicationBackground border-r-2 border-[#A9A9A9]">
                   <input
@@ -82,14 +90,21 @@ const PriceTableWithLegends: React.FC<PropTypes> = ({
                     disabled
                   />
                 </td>
-                {frontPrintPrice.map((price, index2) => (
+                {printPrice.map((price, index2) => (
                   <td
                     key={
                       price.from + '-' + String(index) + '-' + String(index2)
                     }
                     className="bg-priceDataIndicationBackground"
                   >
-                    <input type="text" className="input input-sm w-[4rem]" />
+                    <input
+                      type="text"
+                      className="input input-sm w-[4rem]"
+                      value={
+                        printPrice[index2].pricePerColorQuantity[String(index)]
+                      }
+                      onChange={(event) => pricesOnChange(event, index, index2)}
+                    />
                   </td>
                 ))}
               </tr>

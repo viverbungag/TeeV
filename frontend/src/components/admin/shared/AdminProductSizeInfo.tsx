@@ -1,10 +1,8 @@
 import React from 'react';
 
 import AdminToggle from '@/components/admin/shared/AdminToggle';
-import type {
-  ClothingSizes,
-  InputValues,
-} from '@/utilities/types/AdminFormTypes';
+import type { InputValues } from '@/utilities/types/AdminFormTypes';
+import { ClothingSizes } from '@/utilities/types/AdminFormTypes';
 
 type PropTypes = {
   inputValues: InputValues;
@@ -62,7 +60,7 @@ const AdminProductSizesInfo: React.FC<PropTypes> = ({
       sizesInfo: {
         ...inputValues.sizesInfo,
         [size]: {
-          ...inputValues.sizesInfo[size],
+          ...inputValues.sizesInfo[ClothingSizes[size]],
           [sizePart]: event.target.value,
         },
       },

@@ -31,6 +31,8 @@ const config: Config = {
       numberOfColorsIndicationBackground: '#FFD580', //orange
       priceDataIndicationBackground: '#EDEDED', //gray
       activeNavigationItemBaclground: '#F5C341',
+      buttonBackgroundColor: '#F5C341',
+      loadingColor: '#F5C341',
       borderColor: '#A9A9A9',
     },
     extend: {

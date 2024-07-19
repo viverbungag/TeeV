@@ -1,7 +1,6 @@
-package com.teevision.ecommerce_backend.product;
+package com.teevision.ecommerce_backend.product.dto;
 
 import com.teevision.ecommerce_backend.enums.Size;
-import jakarta.persistence.Enumerated;
 
 public record AvailableSize(
         Size name,

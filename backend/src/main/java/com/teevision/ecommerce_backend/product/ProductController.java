@@ -1,39 +1,56 @@
 package com.teevision.ecommerce_backend.product;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.teevision.ecommerce_backend.product.dto.CalculateFinalPriceBody;
+import com.teevision.ecommerce_backend.product.dto.ProductReturnDto;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Collection;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/api/v1/products")
+@RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class ProductController {
 
-        @RequestMapping("/all")
-        public String getAllProducts() {
-            return "All products";
-        }
+    private final ProductService productService;
 
-        @RequestMapping("/add")
-        public String addProduct() {
-            return "Product added";
-        }
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public Collection<ProductReturnDto> getAllProducts() {
+        return Product.convertToReturnDto(productService.getAllProducts());
+    }
 
-        @RequestMapping("/delete")
-        public String deleteProduct() {
-            return "Product deleted";
-        }
+    @GetMapping("/calculate-final-price")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer calculateFinalPrice(@RequestBody CalculateFinalPriceBody calculateFinalPriceBody) {
+        return productService.calculateFinalPrice(calculateFinalPriceBody);
+    }
 
-        @RequestMapping("/update")
-        public String updateProduct() {
-            return "Product updated";
-        }
+    @RequestMapping("/add")
+    public String addProduct() {
+        return "Product added";
+    }
 
-        @RequestMapping("/find")
-        public String findProduct() {
-            return "Product found";
-        }
+    @RequestMapping("/delete")
+    public String deleteProduct() {
+        return "Product deleted";
+    }
 
-        @RequestMapping("/find/{id}")
-        public String findProductById() {
-            return "Product found by id";
-        }
+    @RequestMapping("/update")
+    public String updateProduct() {
+        return "Product updated";
+    }
+
+    @RequestMapping("/find")
+    public String findProduct() {
+        return "Product found";
+    }
+
+    @RequestMapping("/find/{id}")
+    public String findProductById() {
+        return "Product found by id";
+    }
 }

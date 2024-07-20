@@ -23,9 +23,15 @@ public class ProductController {
         return Product.convertToReturnDto(productService.getAllProducts());
     }
 
-    @GetMapping("/calculate-final-price")
+    @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Integer calculateFinalPrice(@RequestBody CalculateFinalPriceBody calculateFinalPriceBody) {
+    public ProductReturnDto getProductById(@PathVariable long id) {
+        return productService.getProductById(id);
+    }
+
+    @PostMapping("/calculate-final-price")
+    @ResponseStatus(HttpStatus.OK)
+    public Float calculateFinalPrice(@RequestBody CalculateFinalPriceBody calculateFinalPriceBody) {
         return productService.calculateFinalPrice(calculateFinalPriceBody);
     }
 

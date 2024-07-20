@@ -73,9 +73,7 @@ const AdminPriceSettings = () => {
             />
           </div>
           <div className="flex flex-col gap-8 bg-background4 p-8 rounded-lg">
-            <h1 className="text-2xl font-bold">
-              Items per Package (Handling Charge)
-            </h1>
+            <h1 className="text-2xl font-bold">Items per Package</h1>
             <div className="flex gap-8">
               <div className="flex items-center gap-4">
                 <label
@@ -106,6 +104,45 @@ const AdminPriceSettings = () => {
                   name="numberOfHoodiePerPackage"
                   placeholder="Quantity per package"
                   value={data.numberOfHoodiePerPackage}
+                  onChange={inputOnChange}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-8 bg-background4 p-8 rounded-lg">
+            <h1 className="text-2xl font-bold">
+              Prices per Package (Handling Charge)
+            </h1>
+            <div className="flex gap-8">
+              <div className="flex items-center gap-4">
+                <label
+                  htmlFor="pricePerTShirtPackage"
+                  className="text-lg font-bold"
+                >
+                  TSHIRT
+                </label>
+                <input
+                  type="number"
+                  className="input input-md input-bordered"
+                  name="pricePerTShirtPackage"
+                  placeholder="Price per package"
+                  value={data.pricePerTShirtPackage}
+                  onChange={inputOnChange}
+                />
+              </div>
+              <div className="flex items-center gap-4">
+                <label
+                  htmlFor="pricePerHoodiePackage"
+                  className="text-lg font-bold"
+                >
+                  HOODIE
+                </label>
+                <input
+                  type="number"
+                  className="input input-md input-bordered"
+                  name="pricePerHoodiePackage"
+                  placeholder="Price per package"
+                  value={data.pricePerHoodiePackage}
                   onChange={inputOnChange}
                 />
               </div>

@@ -117,4 +117,6 @@ export const initialData = {
   adminFees: 0,
   minimumQuantity: 0,
   maximumQuantity: 0,
+  pricePerTShirtPackage: 0,
+  pricePerHoodiePackage: 0,
 };

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 
+import PriceForEachSizeSection from '@/components/admin/product/new/NewProductForm/PriceForEachSizeSection/PriceForEachSizeSection';
 import AdminInputWithLabel from '@/components/admin/shared/AdminInputWithLabel';
 import AdminProductSizesInfo from '@/components/admin/shared/AdminProductSizeInfo';
 import AdminProductVisibilityRadio from '@/components/admin/shared/AdminProductVisibilityRadio';
@@ -11,7 +12,6 @@ import {
   ClothingSizeParts,
   ClothingSizes,
 } from '@/utilities/types/AdminFormTypes';
-import PriceForEachSizeSection from '@/components/admin/product/new/NewProductForm/PriceForEachSizeSection/PriceForEachSizeSection';
 
 const initialAvailableSizes = Object.keys(ClothingSizes).map((size) => ({
   name: ClothingSizes[size as keyof typeof ClothingSizes],

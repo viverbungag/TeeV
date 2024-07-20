@@ -39,9 +39,9 @@ INSERT INTO style (id, name) VALUES
 
 INSERT INTO product (id, name, brand_id, style_id, size_prices_for_white, size_prices_for_colored, available_sizes) VALUES
 (1, 'Unisex Jersey Short Sleeve Tee', 1, 1,
-'{"S":{markup: 1, originalPrice: 2.47}, "M":{markup: 1, originalPrice: 2.47}, "L":{markup: 1, originalPrice: 2.47}, "XL":{markup: 1, originalPrice: 2.47}, "2XL":{markup: 1, originalPrice: 4.36}, "3XL":{markup: 1, originalPrice: 5.45}, "4XL":{markup: 1, originalPrice: 5.45}',
-'{"S":{markup: 1, originalPrice: 2.47}, "M":{markup: 1, originalPrice: 2.47}, "L":{markup: 1, originalPrice: 2.47}, "XL":{markup: 1, originalPrice: 2.47}, "2XL":{markup: 1, originalPrice: 4.36}, "3XL":{markup: 1, originalPrice: 5.45}, "4XL":{markup: 1, originalPrice: 5.45}',
-'[{"name": "XS", "value": true}, {"name": "S", "value": true}, {"name": "M", "value": true}, {"name": "L", "value": true}, {"name": "XL", "value": true}, {"name": "2XL", "value": true}, {"name": "3XL", "value": true}, {"name": "4XL", "value": true}, {"name": "5XL", "value": false}]');
+'{"S":{"markup": 1, "originalPrice": 2.47}, "M":{"markup": 1, "originalPrice": 2.47}, "L":{"markup": 1, "originalPrice": 2.47}, "XL":{"markup": 1, "originalPrice": 2.47}, "2XL":{"markup": 1, "originalPrice": 4.36}, "3XL":{"markup": 1, "originalPrice": 5.45}, "4XL":{"markup": 1, "originalPrice": 5.45}}',
+'{"S":{"markup": 1, "originalPrice": 2.47}, "M":{"markup": 1, "originalPrice": 2.47}, "L":{"markup": 1, "originalPrice": 2.47}, "XL":{"markup": 1, "originalPrice": 2.47}, "2XL":{"markup": 1, "originalPrice": 4.36}, "3XL":{"markup": 1, "originalPrice": 5.45}, "4XL":{"markup": 1, "originalPrice": 5.45}}',
+'[{"name": "S", "value": true}, {"name": "M", "value": true}, {"name": "L", "value": true}, {"name": "XL", "value": true}, {"name": "2XL", "value": true}, {"name": "3XL", "value": true}, {"name": "4XL", "value": true}, {"name": "5XL", "value": false}]');
 
 
 INSERT INTO product_category (product_id, category_id) VALUES
@@ -58,8 +58,11 @@ minimum_quantity,
 maximum_quantity,
 setup_charge_per_number_of_colors,
 admin_fees,
+price_per_t_shirt_package,
+price_per_hoodie_package,
 front_print_price,
-back_print_price) VALUES (
+back_print_price
+) VALUES (
 1,
 72,
 24,
@@ -67,6 +70,8 @@ back_print_price) VALUES (
 9000,
 25.00,
 11.5,
+45.0,
+45.0,
 '[
     {
       "from": 6,

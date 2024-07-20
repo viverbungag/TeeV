@@ -24,5 +24,7 @@ export type PriceSettings = {
   minimumQuantity: number;
   numberOfHoodiePerPackage: number;
   numberOfTShirtPerPackage: number;
+  pricePerHoodiePackage: number;
+  pricePerTShirtPackage: number;
   setupChargePerNumberOfColors: number;
 };

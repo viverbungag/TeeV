@@ -23,6 +23,8 @@ export const fetchPriceSettings = async (): Promise<PriceSettings> => {
     numberOfHoodiePerPackage: tempData.numberOfHoodiePerPackage,
     numberOfTShirtPerPackage: tempData.numberOfTShirtPerPackage,
     setupChargePerNumberOfColors: tempData.setupChargePerNumberOfColors,
+    pricePerTShirtPackage: tempData.pricePerTShirtPackage,
+    pricePerHoodiePackage: tempData.pricePerHoodiePackage,
   };
   return data;
 };

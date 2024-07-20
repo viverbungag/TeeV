@@ -42,4 +42,10 @@ public class PriceSettings {
     @Column(name = "admin_fees")
     private Float adminFees;
 
+    @Column(name = "price_per_t_shirt_package")
+    private Float pricePerTShirtPackage;
+
+    @Column(name = "price_per_hoodie_package")
+    private Float pricePerHoodiePackage;
+
 }

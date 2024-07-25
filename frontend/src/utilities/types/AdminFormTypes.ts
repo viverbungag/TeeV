@@ -35,12 +35,14 @@ export type InputValues = {
     name: ClothingSizes;
     value: boolean;
   }>;
+  clothePackagingType: string;
   featureInfoItems: string[];
   fiberInfoItems: string[];
   hasFeaturesInfo: boolean;
   hasFiberInfo: boolean;
   hasSizeInfo: boolean;
   isProductVisibleInWebsite: boolean;
+  name: string;
   pricesPerColorOnColoredClothes: {
     [key in ClothingSizes]: {
       markup: number;

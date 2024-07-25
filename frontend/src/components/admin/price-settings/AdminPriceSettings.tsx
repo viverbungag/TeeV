@@ -29,7 +29,7 @@ const AdminPriceSettings = () => {
     }
   }, [priceSettings]);
 
-  const onUpdateButtonClick = async () => {
+  const updateButtonOnClick = async () => {
     await updatePriceSettings(data);
   };
 
@@ -71,6 +71,37 @@ const AdminPriceSettings = () => {
               numberOfColors={numberOfColors}
               setData={setData}
             />
+          </div>
+          <div className="flex flex-col gap-8 bg-background4 p-8 rounded-lg">
+            <h1 className="text-2xl font-bold">Quantity Restrictions</h1>
+            <div className="flex gap-8">
+              <div className="flex items-center gap-4">
+                <label htmlFor="minimumQuantity" className="text-lg font-bold">
+                  Minimum
+                </label>
+                <input
+                  type="number"
+                  className="input input-md input-bordered"
+                  name="minimumQuantity"
+                  placeholder="Input quantity here"
+                  value={data.minimumQuantity}
+                  onChange={inputOnChange}
+                />
+              </div>
+              <div className="flex items-center gap-4">
+                <label htmlFor="maximumQuantity" className="text-lg font-bold">
+                  Maximum
+                </label>
+                <input
+                  type="number"
+                  className="input input-md input-bordered"
+                  name="maximumQuantity"
+                  placeholder="Input quantity here"
+                  value={data.maximumQuantity}
+                  onChange={inputOnChange}
+                />
+              </div>
+            </div>
           </div>
           <div className="flex flex-col gap-8 bg-background4 p-8 rounded-lg">
             <h1 className="text-2xl font-bold">Items per Package</h1>
@@ -180,7 +211,7 @@ const AdminPriceSettings = () => {
       </div>
       <button
         className="btn fixed bottom-10 right-10 bg-buttonBackgroundColor border-buttonBackgroundColor"
-        onClick={onUpdateButtonClick}
+        onClick={updateButtonOnClick}
       >
         Update
       </button>

@@ -28,3 +28,8 @@ export type PriceSettings = {
   pricePerTShirtPackage: number;
   setupChargePerNumberOfColors: number;
 };
+
+export type ErrorMessage = {
+  message: string;
+  type: string;
+};

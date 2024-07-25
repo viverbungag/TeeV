@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 
 import PriceForEachSizeSection from '@/components/admin/product/new/NewProductForm/PriceForEachSizeSection/PriceForEachSizeSection';
 import AdminInputWithLabel from '@/components/admin/shared/AdminInputWithLabel';
+import AdminProductPackagingType from '@/components/admin/shared/AdminProductPackagingType';
 import AdminProductSizesInfo from '@/components/admin/shared/AdminProductSizeInfo';
 import AdminProductVisibilityRadio from '@/components/admin/shared/AdminProductVisibilityRadio';
 import AdminToggleWithBody from '@/components/admin/shared/AdminToggleWithBody';
+import { createProduct } from '@/utilities/fetch/product';
 import type { InputValues } from '@/utilities/types/AdminFormTypes';
 import {
   ClothingSizeParts,
@@ -64,6 +66,7 @@ const brands = [
 const brandStyle = ['5000', '6004', '12600'];
 
 const initialValues = {
+  name: '',
   hasFiberInfo: false,
   fiberInfoItems: [''],
   hasFeaturesInfo: false,
@@ -72,6 +75,7 @@ const initialValues = {
   hasSizeInfo: false,
   availableSizes: initialAvailableSizes,
   availableClotheSizeParts: initialAvailableClotheSizeParts,
+  clothePackagingType: 'TSHIRT',
   pricesPerColorOnWhiteClothes: {
     [ClothingSizes.XS]: {
       markup: 1,
@@ -220,9 +224,14 @@ const initialValues = {
 const NewProductForm = () => {
   const [inputValues, setInputValues] = useState<InputValues>(initialValues);
 
+  const newProductFormOnSubmit = async (event: any) => {
+    event.preventDefault();
+    await createProduct(inputValues);
+  };
+
   return (
     <div className="flex bg-background5 p-16 ml-60">
-      <form>
+      <form onSubmit={newProductFormOnSubmit}>
         <div className="flex flex-col w-[70rem] gap-8">
           <div className="flex gap-8">
             <div className="flex flex-col gap-8 flex-grow">
@@ -230,6 +239,9 @@ const NewProductForm = () => {
                 <AdminInputWithLabel
                   label="Product Name"
                   placeholder="Input the name here"
+                  name="name"
+                  inputValues={inputValues}
+                  setInputValues={setInputValues}
                 />
                 <AdminProductVisibilityRadio
                   inputValues={inputValues}
@@ -252,6 +264,12 @@ const NewProductForm = () => {
                   toggleName="hasFeaturesInfo"
                   toggleLabel="Is info on Features shown?"
                   itemsName="featureInfoItems"
+                />
+              </div>
+              <div className="p-8 rounded bg-background4">
+                <AdminProductPackagingType
+                  inputValues={inputValues}
+                  setInputValues={setInputValues}
                 />
               </div>
             </div>
@@ -317,6 +335,12 @@ const NewProductForm = () => {
             </div>
           </div>
         </div>
+        <button
+          className="btn fixed bottom-10 right-10 bg-buttonBackgroundColor border-buttonBackgroundColor"
+          type="submit"
+        >
+          Add Product
+        </button>
       </form>
     </div>
   );

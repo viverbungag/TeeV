@@ -34,6 +34,10 @@ const CalculatePriceSection: React.FC<PropTypes> = ({ product }) => {
       productId: product.id,
     });
 
+  const totalQuantity = Object.values(
+    priceVariablesData.quantityBySizes
+  ).reduce((acc, quantity) => acc + quantity, 0 as number);
+
   const [finalPrice, setFinalPrice] = React.useState<number>(0);
 
   const handleQuantityInputOnChange = (
@@ -89,6 +93,7 @@ const CalculatePriceSection: React.FC<PropTypes> = ({ product }) => {
             name="frontNumberOfColors"
             type="number"
             onChange={handleColorsInputOnChange}
+            value={priceVariablesData.frontNumberOfColors}
           />
         </div>
         <div className="flex items-center gap-4">
@@ -98,6 +103,7 @@ const CalculatePriceSection: React.FC<PropTypes> = ({ product }) => {
             name="backNumberOfColors"
             type="number"
             onChange={handleColorsInputOnChange}
+            value={priceVariablesData.backNumberOfColors}
           />
         </div>
       </div>
@@ -107,7 +113,10 @@ const CalculatePriceSection: React.FC<PropTypes> = ({ product }) => {
       >
         Calculate Price
       </button>
-      <p>Final Price: {finalPrice}</p>
+      <p>Final Price: {Math.round(finalPrice * 100) / 100}</p>
+      <p>
+        Price per Unit: {Math.round((finalPrice / totalQuantity) * 100) / 100}
+      </p>
     </div>
   );
 };

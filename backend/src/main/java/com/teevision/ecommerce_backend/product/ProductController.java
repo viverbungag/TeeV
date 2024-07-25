@@ -1,7 +1,7 @@
 package com.teevision.ecommerce_backend.product;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.teevision.ecommerce_backend.product.dto.CalculateFinalPriceBody;
+import com.teevision.ecommerce_backend.product.dto.CreateProductDto;
 import com.teevision.ecommerce_backend.product.dto.ProductReturnDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -35,9 +35,10 @@ public class ProductController {
         return productService.calculateFinalPrice(calculateFinalPriceBody);
     }
 
-    @RequestMapping("/add")
-    public String addProduct() {
-        return "Product added";
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createProduct(@RequestBody CreateProductDto createProductDto) {
+        productService.createProduct(createProductDto);
     }
 
     @RequestMapping("/delete")

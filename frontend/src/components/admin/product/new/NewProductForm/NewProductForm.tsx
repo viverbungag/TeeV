@@ -1,14 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 import PriceForEachSizeSection from '@/components/admin/product/new/NewProductForm/PriceForEachSizeSection/PriceForEachSizeSection';
 import AdminInputWithLabel from '@/components/admin/shared/AdminInputWithLabel';
+import AdminProductFileUploader from '@/components/admin/shared/AdminProductFileUploader/AdminProductFileUploader';
 import AdminProductPackagingType from '@/components/admin/shared/AdminProductPackagingType';
 import AdminProductSizesInfo from '@/components/admin/shared/AdminProductSizeInfo';
 import AdminProductVisibilityRadio from '@/components/admin/shared/AdminProductVisibilityRadio';
 import AdminToggleWithBody from '@/components/admin/shared/AdminToggleWithBody';
-import { createProduct } from '@/utilities/fetch/product';
+import { createProduct, uploadProductImages } from '@/utilities/fetch/product';
 import type { InputValues } from '@/utilities/types/AdminFormTypes';
 import {
   ClothingSizeParts,
@@ -223,10 +225,28 @@ const initialValues = {
 
 const NewProductForm = () => {
   const [inputValues, setInputValues] = useState<InputValues>(initialValues);
+  const [featureImage, setFeatureImage] = useState<File[]>([]);
+  const [defaultImages, setDefaultImages] = useState<File[]>([]);
+
+  const onFormSubmitSuccess = () => {
+    setInputValues(initialValues);
+    setFeatureImage([]);
+    setDefaultImages([]);
+  };
 
   const newProductFormOnSubmit = async (event: any) => {
     event.preventDefault();
-    await createProduct(inputValues);
+    try {
+      await createProduct(inputValues, onFormSubmitSuccess);
+      await uploadProductImages(
+        inputValues.name,
+        featureImage[0],
+        defaultImages
+      );
+      toast.success('Product created successfully');
+    } catch (error: any) {
+      toast.error(error);
+    }
   };
 
   return (
@@ -333,6 +353,14 @@ const NewProductForm = () => {
                 headerLabel="Prices for colored"
               />
             </div>
+          </div>
+          <div className="w-full p-8 rounded bg-background4">
+            <AdminProductFileUploader
+              featureImage={featureImage}
+              setFeatureImage={setFeatureImage}
+              defaultImages={defaultImages}
+              setDefaultImages={setDefaultImages}
+            />
           </div>
         </div>
         <button

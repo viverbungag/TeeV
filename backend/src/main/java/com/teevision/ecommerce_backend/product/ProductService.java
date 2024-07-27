@@ -17,6 +17,7 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -157,7 +158,7 @@ public class ProductService {
         BigDecimal totalPriceOfProductBySize = BigDecimal.ZERO;
         for (Object obj : quantityBySizesMap.keySet()) {
             Integer quantity = (Integer) quantityBySizesMap.get(obj);
-            BigDecimal productPriceBySize = getProductPriceBySize(product.getSizePricesForWhite(), (String) obj);
+            BigDecimal productPriceBySize = getProductPriceBySize(product.getPricesPerColorOnWhiteClothes(), (String) obj);
 //            System.out.println("Size: " + obj);
 //            System.out.println("productPriceBySize: " + productPriceBySize);
 //            System.out.println("quantity: " + quantity);
@@ -219,7 +220,10 @@ public class ProductService {
 
     public void createProduct(CreateProductDto createProductDto) {
 
-
+        Optional<Product> product = productRepository.findByName(createProductDto.name());
+        if (product.isPresent()) {
+            throw new IllegalArgumentException("Product with name " + createProductDto.name() + " already exists");
+        }
 
         productRepository.createProduct(
                 createProductDto.name(),
@@ -229,9 +233,9 @@ public class ProductService {
                 createProductDto.hasSizeInfo(),
                 createProductDto.availableSizes(),
                 createProductDto.availableClotheSizeParts(),
-                createProductDto.sizePricesForWhite(),
-                createProductDto.sizePricesForColored(),
-                ClothePackagingType.fromString(createProductDto.clothePackagingType()),
+                createProductDto.pricesPerColorOnWhiteClothes(),
+                createProductDto.pricesPerColorOnColoredClothes(),
+                createProductDto.clothePackagingType(),
                 1L,
                 1L);
     }

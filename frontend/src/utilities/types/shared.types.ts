@@ -4,8 +4,11 @@ import type { PrintType } from '@/utilities/types/PriceSettingTypes';
 export type Product = {
   availableClotheSizeParts: string;
   availableSizes: string;
-  featuresInfoItems: string;
-  fiberInfoItems: string;
+  brand: {
+    name: string;
+  };
+  featuresInfoItems: string[];
+  fiberInfoItems: string[];
   hasFeaturesInfo: boolean;
   hasFiberInfo: boolean;
   hasSizeInfo: boolean;
@@ -14,6 +17,9 @@ export type Product = {
   name: string;
   sizePricesForColored: string;
   sizePricesForWhite: string;
+  style: {
+    name: string;
+  };
 };
 
 export type PriceSettings = {

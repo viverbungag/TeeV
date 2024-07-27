@@ -5,7 +5,7 @@ import AdminProducts from '@/components/admin/products/AdminProducts/AdminProduc
 
 const page = () => {
   return (
-    <div className="bg-background5">
+    <div className="">
       <div>
         <AdminNavigation page="products" />
         <AdminProducts />

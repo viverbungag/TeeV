@@ -37,25 +37,25 @@ INSERT INTO style (id, name) VALUES
 (2, '6004'),
 (3, '12600');
 
-INSERT INTO product (id, name, brand_id, style_id, clothe_packaging_type, size_prices_for_white, size_prices_for_colored, available_sizes) VALUES
-(1, 'Unisex Jersey Short Sleeve Tee', 1, 1, 'TSHIRT',
+INSERT INTO products (name, brand_id, style_id, clothe_packaging_type, is_product_visible_in_website, prices_per_color_on_white_clothes, prices_per_color_on_colored_clothes, available_sizes) VALUES
+('Unisex Jersey Short Sleeve Tee', 1, 1, 'TSHIRT', 'true',
 '{"S":{"markup": 1.75, "originalPrice": 2.47}, "M":{"markup": 1.75, "originalPrice": 2.47}, "LG":{"markup": 1.75, "originalPrice": 2.47}, "XL":{"markup": 1.75, "originalPrice": 2.47}, "2XL":{"markup": 1.75, "originalPrice": 4.36}, "3XL":{"markup": 1.75, "originalPrice": 5.45}, "4XL":{"markup": 1.75, "originalPrice": 5.45}}',
 '{"S":{"markup": 1.75, "originalPrice": 2.47}, "M":{"markup": 1.75, "originalPrice": 2.47}, "LG":{"markup": 1.75, "originalPrice": 2.47}, "XL":{"markup": 1.75, "originalPrice": 2.47}, "2XL":{"markup": 1.75, "originalPrice": 4.36}, "3XL":{"markup": 1.75, "originalPrice": 5.45}, "4XL":{"markup": 1.75, "originalPrice": 5.45}}',
 '[{"name": "S", "value": true}, {"name": "M", "value": true}, {"name": "LG", "value": true}, {"name": "XL", "value": true}, {"name": "2XL", "value": true}, {"name": "3XL", "value": true}, {"name": "4XL", "value": true}, {"name": "5XL", "value": false}]');
 
---INSERT INTO fiber_info_items (product_id, fiber_info_item) VALUES
---(1, '100% Cotton'),
---(1, '50% Cotton, 50% Polyester'),
---(1, '90% Cotton, 10% Polyester');
---
---INSERT INTO feature_info_items (product_id, feature_info_item) VALUES
---(1, '4.2 oz., 100% combed and ringspun cotton'),
---(1, '30 singles'),
---(1, 'Retail fit'),
---(1, 'Unisex sizing'),
---(1, 'Side-seamed'),
---(1, 'Tear away label'),
---(1, 'Pre-shrunk');
+INSERT INTO fiber_info_items (product_id, fiber_info_item) VALUES
+(1, '100% Cotton'),
+(1, '50% Cotton, 50% Polyester'),
+(1, '90% Cotton, 10% Polyester');
+
+INSERT INTO feature_info_items (product_id, feature_info_item) VALUES
+(1, '4.2 oz., 100% combed and ringspun cotton'),
+(1, '30 singles'),
+(1, 'Retail fit'),
+(1, 'Unisex sizing'),
+(1, 'Side-seamed'),
+(1, 'Tear away label'),
+(1, 'Pre-shrunk');
 
 
 

@@ -15,11 +15,10 @@ public enum ClothePackagingType {
     }
 
     public static ClothePackagingType fromString(String name) {
-        for (ClothePackagingType type : ClothePackagingType.values()) {
-            if (type.getName().equalsIgnoreCase(name)) {
-                return type;
-            }
-        }
-        return TSHIRT;
+        return switch (name) {
+            case "TSHIRT" -> TSHIRT;
+            case "HOODIE" -> HOODIE;
+            default -> TSHIRT;
+        };
     }
 }

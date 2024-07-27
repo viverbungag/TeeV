@@ -13,8 +13,9 @@ import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
-@Entity(name = "product")
+@Entity(name = "products")
 @ToString
 @NoArgsConstructor
 @Getter
@@ -26,7 +27,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     @NonNull
     private String name;
 
@@ -39,21 +40,21 @@ public class Product {
     private Boolean hasFiberInfo;
 
 
-//    @ElementCollection(targetClass = String.class, fetch = FetchType.LAZY)
-//    @CollectionTable(name = "fiber_info_items", joinColumns = @JoinColumn(name = "product_id"))
-//    @Column(name = "fiber_info_item", nullable = false)
-//    @NonNull
-//    private ArrayList<String> fiberInfoItems;
+    @ElementCollection(targetClass = String.class, fetch = FetchType.LAZY)
+    @CollectionTable(name = "fiber_info_items", joinColumns = @JoinColumn(name = "product_id"))
+    @Column(name = "fiber_info_item", nullable = false)
+    @NonNull
+    private List<String> fiberInfoItems;
 
     @Column(name = "has_features_info")
     @NonNull
     private Boolean hasFeaturesInfo;
 
-//    @ElementCollection(targetClass = String.class, fetch = FetchType.LAZY)
-//    @CollectionTable(name = "feature_info_items", joinColumns = @JoinColumn(name = "product_id"))
-//    @Column(name = "feature_info_item", nullable = false)
-//    @NonNull
-//    private ArrayList<String> featuresInfoItems;
+    @ElementCollection(targetClass = String.class, fetch = FetchType.LAZY)
+    @CollectionTable(name = "feature_info_items", joinColumns = @JoinColumn(name = "product_id"))
+    @Column(name = "feature_info_item", nullable = false)
+    @NonNull
+    private List<String> featuresInfoItems;
 
     @Column(name = "has_size_info")
     @NonNull
@@ -67,13 +68,13 @@ public class Product {
     @NonNull
     private String availableClotheSizeParts;
 
-    @Column(name="size_prices_for_white", columnDefinition = "jsonb")
+    @Column(name="prices_per_color_on_white_clothes", columnDefinition = "jsonb")
     @NonNull
-    private String sizePricesForWhite;
+    private String pricesPerColorOnWhiteClothes;
 
-    @Column(name="size_prices_for_colored", columnDefinition = "jsonb")
+    @Column(name="prices_per_color_on_colored_clothes", columnDefinition = "jsonb")
     @NonNull
-    private String sizePricesForColored;
+    private String pricesPerColorOnColoredClothes;
 
     @Enumerated(EnumType.STRING)
     @Column(name="clothe_packaging_type")
@@ -102,11 +103,9 @@ public class Product {
         return new ProductReturnDto(
                 product.getId(),
                 product.getName(),
-                product.getSizePricesForWhite(),
-                product.getSizePricesForColored(),
                 brand,
                 style,
-                product.getAvailableSizes());
+                product.getIsProductVisibleInWebsite());
     }
 
     public static Collection<ProductReturnDto> convertToReturnDto(Collection<Product> products) {
@@ -119,14 +118,14 @@ public class Product {
                 createProductDto.name(),
                 createProductDto.isProductVisibleInWebsite(),
                 createProductDto.hasFiberInfo(),
-//                createProductDto.fiberInfoItems(),
+                createProductDto.fiberInfoItems(),
                 createProductDto.hasFeaturesInfo(),
-//                createProductDto.featuresInfoItems(),
+                createProductDto.featuresInfoItems(),
                 createProductDto.hasSizeInfo(),
                 createProductDto.availableSizes(),
                 createProductDto.availableClotheSizeParts(),
-                createProductDto.sizePricesForWhite(),
-                createProductDto.sizePricesForColored(),
+                createProductDto.pricesPerColorOnWhiteClothes(),
+                createProductDto.pricesPerColorOnColoredClothes(),
                 ClothePackagingType.fromString(createProductDto.clothePackagingType()));
     }
 

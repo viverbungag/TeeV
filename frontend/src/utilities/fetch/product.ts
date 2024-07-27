@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { toast } from 'react-toastify';
 
+import { uploadData } from 'aws-amplify/storage';
 import type { AxiosError } from 'axios';
 import axios from 'axios';
 
@@ -37,7 +38,10 @@ export const fetchProductById = async (id: string): Promise<Product> => {
   return data;
 };
 
-export const createProduct = async (inputValues: InputValues) => {
+export const createProduct = async (
+  inputValues: InputValues,
+  onSuccess: () => void
+) => {
   const data = {
     ...inputValues,
     availableSizes: JSON.stringify(inputValues.availableSizes),
@@ -48,6 +52,9 @@ export const createProduct = async (inputValues: InputValues) => {
     pricesPerColorOnColoredClothes: JSON.stringify(
       inputValues.pricesPerColorOnColoredClothes
     ),
+    availableClotheSizeParts: JSON.stringify(
+      inputValues.availableClotheSizeParts
+    ),
   };
 
   await axios({
@@ -57,7 +64,36 @@ export const createProduct = async (inputValues: InputValues) => {
     headers: {
       'Access-Control-Allow-Origin': backendUrl,
     },
-  });
+  })
+    .then(() => {
+      onSuccess();
+    })
+    .catch((error: AxiosError<ErrorMessage>) => {
+      if (error.response) {
+        throw error.response.data.message;
+      }
+    });
+};
+
+export const uploadProductImages = async (
+  productName: string,
+  featureImage: File,
+  defaultImages: File[]
+) => {
+  try {
+    await uploadData({
+      path: `public/album/${productName}/featured/0`,
+      data: featureImage,
+    }).result;
+    defaultImages.forEach(async (image, index) => {
+      await uploadData({
+        path: `public/album/${productName}/defaults/${index}`,
+        data: image,
+      }).result;
+    });
+  } catch (error: any) {
+    throw error;
+  }
 };
 
 export const calculateFinalPrice = async (

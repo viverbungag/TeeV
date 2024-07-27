@@ -1,4 +1,4 @@
-INSERT INTO category (id, name) VALUES
+INSERT INTO categories (id, name) VALUES
 (1, 'Short Sleeve'),
 (2, 'Long Sleeve'),
 (3, 'Polo'),

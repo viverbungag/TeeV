@@ -41,6 +41,10 @@ const config: Config = {
         coolvetica: ['var(--font-coolvetica)'],
         oswald: ['var(--font-oswald)'],
       },
+      dropShadow: {
+        glowRed: ['0 0 3px #CC183C'],
+        glowGreen: ['0 0 3px #00FF00'],
+      },
     },
   },
 };

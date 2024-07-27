@@ -16,6 +16,9 @@ import {
   ClothingSizeParts,
   ClothingSizes,
 } from '@/utilities/types/AdminFormTypes';
+import { fetchCategories } from '@/utilities/fetch/categories';
+import { useQuery } from '@tanstack/react-query';
+import { Category } from '@/utilities/types/shared.types';
 
 const initialAvailableSizes = Object.keys(ClothingSizes).map((size) => ({
   name: ClothingSizes[size as keyof typeof ClothingSizes],
@@ -29,22 +32,22 @@ const initialAvailableClotheSizeParts = Object.keys(ClothingSizeParts).map(
   })
 );
 
-const categories = [
-  'Short Sleeve',
-  'Long Sleeve',
-  'Polo',
-  'Performance',
-  'Long sleeve Polo',
-  'Tote Bag',
-  'Hoodie',
-  'Crewneck',
-  'Hats',
-  'Beanies',
-  'Ladies Shirts',
-  'Toddler Tees',
-  'Tank Tops',
-  'Pajama',
-];
+// const categories = [
+//   'Short Sleeve',
+//   'Long Sleeve',
+//   'Polo',
+//   'Performance',
+//   'Long sleeve Polo',
+//   'Tote Bag',
+//   'Hoodie',
+//   'Crewneck',
+//   'Hats',
+//   'Beanies',
+//   'Ladies Shirts',
+//   'Toddler Tees',
+//   'Tank Tops',
+//   'Pajama',
+// ];
 
 const brands = [
   'AS Colour',
@@ -234,6 +237,13 @@ const NewProductForm = () => {
     setDefaultImages([]);
   };
 
+  const categoryQuery = useQuery<Category[]>({
+    queryKey: ['categories', 'all'],
+    queryFn: () => fetchCategories(),
+  });
+
+  const categories = categoryQuery.data;
+
   const newProductFormOnSubmit = async (event: any) => {
     event.preventDefault();
     try {
@@ -299,10 +309,10 @@ const NewProductForm = () => {
                 <div className="h-full w-full flex flex-col gap-4 overflow-x-auto">
                   <p className="font-bold">Categories</p>
                   <div className=" flex flex-col gap-2">
-                    {categories.map((category) => (
-                      <div className="flex gap-2" key={category}>
+                    {categories?.map((category) => (
+                      <div className="flex gap-2" key={category.name}>
                         <input type="checkbox" className="checkbox" />
-                        <p>{category}</p>
+                        <p>{category.name}</p>
                       </div>
                     ))}
                   </div>

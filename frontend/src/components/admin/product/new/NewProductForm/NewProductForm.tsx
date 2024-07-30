@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
+import { useQuery } from '@tanstack/react-query';
+
 import PriceForEachSizeSection from '@/components/admin/product/new/NewProductForm/PriceForEachSizeSection/PriceForEachSizeSection';
 import AdminInputWithLabel from '@/components/admin/shared/AdminInputWithLabel';
 import AdminProductFileUploader from '@/components/admin/shared/AdminProductFileUploader/AdminProductFileUploader';
@@ -10,15 +12,14 @@ import AdminProductPackagingType from '@/components/admin/shared/AdminProductPac
 import AdminProductSizesInfo from '@/components/admin/shared/AdminProductSizeInfo';
 import AdminProductVisibilityRadio from '@/components/admin/shared/AdminProductVisibilityRadio';
 import AdminToggleWithBody from '@/components/admin/shared/AdminToggleWithBody';
+import { fetchCategories } from '@/utilities/fetch/category';
 import { createProduct, uploadProductImages } from '@/utilities/fetch/product';
 import type { InputValues } from '@/utilities/types/AdminFormTypes';
 import {
   ClothingSizeParts,
   ClothingSizes,
 } from '@/utilities/types/AdminFormTypes';
-import { fetchCategories } from '@/utilities/fetch/categories';
-import { useQuery } from '@tanstack/react-query';
-import { Category } from '@/utilities/types/shared.types';
+import type { Category } from '@/utilities/types/shared.types';
 
 const initialAvailableSizes = Object.keys(ClothingSizes).map((size) => ({
   name: ClothingSizes[size as keyof typeof ClothingSizes],
@@ -241,7 +242,6 @@ const NewProductForm = () => {
     queryKey: ['categories', 'all'],
     queryFn: () => fetchCategories(),
   });
-
   const categories = categoryQuery.data;
 
   const newProductFormOnSubmit = async (event: any) => {

@@ -27,6 +27,11 @@ export type Category = {
   name: string;
 };
 
+export type Brand = {
+  id: number;
+  name: string;
+};
+
 export type PriceSettings = {
   adminFees: number;
   backPrintPrice: Array<PrintType>;

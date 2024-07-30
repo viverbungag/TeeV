@@ -22,7 +22,7 @@ const AdminProducts = () => {
 
   const [productsWithImages, setProductsWithImages] = React.useState<any>([]);
 
-  useEffect(() => {
+  useEffect(() => { 
     const fetchImages = async () => {
       if (products) {
         const resultingImages = await Promise.all(

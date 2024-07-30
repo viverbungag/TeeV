@@ -1,5 +1,6 @@
 package com.teevision.ecommerce_backend.Brand;
 
+import com.teevision.ecommerce_backend.Brand.dto.BrandReturnDto;
 import com.teevision.ecommerce_backend.product.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -23,4 +24,12 @@ public class Brand {
 
     @OneToMany(mappedBy = "brand", fetch = FetchType.LAZY)
     private Collection<Product> products;
+
+    public BrandReturnDto convertToReturnDto() {
+        return new BrandReturnDto(id, name);
+    }
+
+    public static Collection<BrandReturnDto> convertToReturnDto(Collection<Brand> brands) {
+        return brands.stream().map(Brand::convertToReturnDto).toList();
+    }
 }
